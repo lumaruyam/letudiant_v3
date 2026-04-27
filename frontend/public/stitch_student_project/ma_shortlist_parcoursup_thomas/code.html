@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#e30613",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8c0058",
+                        "on-secondary-fixed": "#1e055a",
+                        "surface-container-high": "#e8e5ff",
+                        "tertiary-container": "#c53a84",
+                        "secondary-fixed-dim": "#cbbeff",
+                        "surface-variant": "#e2e0fc",
+                        "secondary": "#6252a1",
+                        "on-secondary-container": "#4a3b88",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb0d0",
+                        "primary-fixed": "#ffdad5",
+                        "secondary-container": "#bbaaff",
+                        "surface-container": "#efecff",
+                        "on-surface-variant": "#5e3f3b",
+                        "secondary-fixed": "#e7deff",
+                        "inverse-primary": "#ffb4aa",
+                        "background": "#fcf8ff",
+                        "surface-dim": "#dad7f3",
+                        "surface-container-highest": "#e2e0fc",
+                        "surface-bright": "#fcf8ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#936e69",
+                        "on-tertiary-container": "#fff5f6",
+                        "surface-tint": "#c0000c",
+                        "on-primary-fixed": "#410001",
+                        "on-tertiary-fixed": "#3d0024",
+                        "surface": "#fcf8ff",
+                        "outline-variant": "#e9bcb6",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fff5f3",
+                        "surface-container-low": "#f5f2ff",
+                        "primary": "#b5000b",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-primary-fixed-variant": "#930007",
+                        "on-background": "#1a1a2e",
+                        "tertiary": "#a51d6b",
+                        "on-surface": "#1a1a2e",
+                        "tertiary-fixed": "#ffd8e6",
+                        "inverse-surface": "#2f2e43",
+                        "on-secondary-fixed-variant": "#4a3a87",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f2efff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fcf8ff; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="max-w-[480px] mx-auto min-h-screen text-on-surface overflow-x-hidden">
+<!-- HEADER (TopAppBar Logic) -->
+<header class="sticky top-0 z-50 bg-[#fcf8ff]/90 backdrop-blur-xl">
+<div class="h-1 bg-primary w-full"></div>
+<div class="flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface">chevron_left</span>
+<div class="font-extrabold tracking-tight text-on-surface italic text-xl">l'<span class="text-primary">E</span>tudiant</div>
+</div>
+<div class="text-[16px] font-bold text-on-surface">Ma Shortlist</div>
+<div class="flex items-center gap-2">
+<div class="flex flex-col items-end">
+<span class="text-[11px] text-on-surface/60 font-medium">Thomas</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-inverse-surface flex items-center justify-center text-white font-bold text-sm">T</div>
+</div>
+</div>
+</header>
+<!-- PARCOURSUP URGENCY BANNER -->
+<section class="bg-primary overflow-hidden">
+<div class="flex items-center justify-between px-5 py-2.5">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[18px]">alarm</span>
+<span class="text-xs font-bold uppercase tracking-wide">Parcoursup ferme dans J-18</span>
+</div>
+<span class="text-[11px] text-white/70 font-medium italic">3 mars 2026</span>
+</div>
+<div class="h-[3px] bg-white/15 w-full">
+<div class="h-full bg-white w-[78%]"></div>
+</div>
+</section>
+<!-- SHORTLIST HEADER SECTION -->
+<section class="px-5 pt-5 pb-2 bg-surface">
+<h1 class="text-[28px] font-black italic uppercase tracking-tighter leading-none text-on-surface">Tes 5 Programmes</h1>
+<p class="text-[12px] text-on-surface/50 font-medium mt-1">Classe-les par ordre de préférence</p>
+<div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-2">
+<button class="bg-primary-container text-white px-4 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap">Tous (5)</button>
+<button class="bg-surface-container-low text-on-secondary-container px-4 py-1.5 rounded-full text-[11px] font-medium whitespace-nowrap">Visités (4)</button>
+<button class="bg-surface-container-low text-on-secondary-container px-4 py-1.5 rounded-full text-[11px] font-medium whitespace-nowrap">Favoris (2)</button>
+</div>
+</section>
+<!-- PROGRAMME CARDS -->
+<main class="space-y-3 pb-8">
+<!-- CARD 1 (EXPANDED) -->
+<article class="mx-4 bg-surface-container-lowest rounded-[24px] p-[18px] shadow-[0_2px_12px_rgba(26,26,46,0.06)] relative overflow-hidden">
+<div class="flex items-center gap-4">
+<div class="text-[36px] font-[900] italic text-primary leading-none">01</div>
+<div class="w-11 h-11 bg-white rounded-[12px] p-1.5 shadow-[0_1px_4px_rgba(0,0,0,0.08)] flex-shrink-0">
+<img data-alt="ESGI Paris professional engineering school logo, clean graphic design on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoNRhUTTzPm--rm9jb18_lAQoqUH0uqdwvi5LYPihURRIrv7GwjyTIhomaMMZd7dusDeBX4iidt3FJ3VgmCTVjpuQ4vNvrQz6iOylfIyIXiWF3h_T5EVB2wnOsSfqJn10xuQ8-yqh5p8TkA5qNJre0dF9ZAg64waHEOlaYeO4ROGIWkRGaGHvnk3D4DVul45glMYukluoEZsB-l8W01oYuyKhq0TBYTG7JIrSpy2l59UIvLc26dDoecDz1gXyKkBvSjx_8PbGHZ5Q" style="width:100%;height:100%;object-fit:contain;"/>
+</div>
+<div class="flex-1">
+<h3 class="text-[15px] font-bold text-on-surface leading-tight">ESGI Paris</h3>
+<p class="text-[12px] text-on-surface/50 font-medium">Bachelor Game Design</p>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<span class="material-symbols-outlined text-[#CCCCCC]">drag_indicator</span>
+<span class="material-symbols-outlined text-[#CCCCCC] text-[16px]">expand_less</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mt-3">
+<span class="bg-[#dcfce7] text-[#16a34a] text-[10px] font-bold px-2 py-0.5 rounded-full">Alternance ✓</span>
+<span class="bg-[#fff7ed] text-[#F97316] text-[10px] font-bold px-2 py-0.5 rounded-full">Insertion 87%</span>
+<span class="bg-surface-container-low text-secondary text-[10px] font-medium px-2 py-0.5 rounded-full">22 min au stand ⏱</span>
+</div>
+<!-- Expanded content -->
+<div class="mt-4 bg-surface-container-low rounded-2xl p-3.5 space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-on-surface/50">school</span>
+<span class="text-[10px] uppercase font-bold text-on-surface/50 tracking-wider">Témoignage alumni:</span>
+</div>
+<p class="text-[12px] italic text-on-surface font-medium leading-relaxed">"J'ai trouvé un emploi dans le jeu vidéo 2 mois après l'obtention du diplôme."</p>
+<p class="text-[10px] text-on-surface/60">— Kevin M., promo 2023, Lead Designer chez Ubisoft</p>
+<div class="pt-2 flex items-center justify-between">
+<a class="text-[12px] font-bold text-primary underline decoration-primary-container/30" href="#">Voir le programme →</a>
+<button class="text-[11px] font-bold text-on-surface px-3 py-1 rounded-full border border-outline-variant/30">Demander info</button>
+</div>
+</div>
+</article>
+<!-- CARD 2 -->
+<article class="mx-4 bg-surface-container-lowest rounded-[24px] p-[18px] shadow-[0_2px_12px_rgba(26,26,46,0.06)]">
+<div class="flex items-center gap-4">
+<div class="text-[28px] font-extrabold italic text-inverse-surface leading-none opacity-60">02</div>
+<div class="w-11 h-11 bg-white rounded-[12px] p-1.5 shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
+<img data-alt="HETIC Paris school of digital technology logo on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgEZvZXqHYopCNRSH9CWYta43xaWi9xs_SvrlYFC-LjeF7URqHQvvutPPkc11PeiuiJeApZR_RZgMr8MJ8cGWkWe4KZ9hKmIAtDBAocpEvQ3en206owzrHLe7GIDWxPYUx8LaMi8bDTBzxFLyZGcB6pOPxMRIGLUjQPYJQGa-oTSYH2DByeMN59SgEhv0CHDSkGCFUPbNPdhyMKvq8RpNjFno9nUkZy9lPiHLTMLPotYjkKklhZG-sd4_bUxMcwFwQ_Td44DmUyxU" style="width:100%;height:100%;object-fit:contain;"/>
+</div>
+<div class="flex-1">
+<h3 class="text-[15px] font-bold text-on-surface leading-tight">HETIC Paris</h3>
+<p class="text-[12px] text-on-surface/50 font-medium">Bachelor Numérique &amp; Société</p>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<span class="material-symbols-outlined text-[#CCCCCC]">drag_indicator</span>
+<span class="material-symbols-outlined text-[#CCCCCC] text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mt-3">
+<span class="bg-surface-container-low text-secondary text-[10px] font-medium px-2 py-0.5 rounded-full">14 min au stand ⏱</span>
+<span class="bg-secondary-fixed text-on-secondary-container text-[10px] font-medium px-2 py-0.5 rounded-full">3 camarades ont choisi cette école 👥</span>
+</div>
+</article>
+<!-- CARD 3 -->
+<article class="mx-4 bg-surface-container-lowest rounded-[24px] p-[18px] shadow-[0_2px_12px_rgba(26,26,46,0.06)]">
+<div class="flex items-center gap-4">
+<div class="text-[28px] font-extrabold italic text-on-surface/30 leading-none">03</div>
+<div class="w-11 h-11 bg-white rounded-[12px] p-1.5 shadow-[0_1px_4px_rgba(0,0,0,0.08)]">
+<img data-alt="Université Paris 8 modern university logo 2024, blue and white minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBULaao-KUK8955inuKJOXguX8W7LMllww6QCSZcMQC67ZO3BKzKMd3sDyCKT4Vol2M0IvW_UhHL7kmRnf2IEw9HUE8mganxzV-x3cp21yYvH1AmthNWA7gbfdQl6hyEBEhHNgdmXDxaIm5tUp9FpjmaxWecOA7vWMVnrLeW858Ofm6anqHifMQwPHnBClSVi8eLs9MJhPEIvBrYvWliTw2VK__s7AftsX9dzyeFyNAjnM2tZa77sW6m5COAZuCR_JA5DATVzCYhFA" style="width:100%;height:100%;object-fit:contain;"/>
+</div>
+<div class="flex-1">
+<h3 class="text-[15px] font-bold text-on-surface leading-tight">Université Paris 8</h3>
+<p class="text-[12px] text-on-surface/50 font-medium">Licence Informatique</p>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<span class="material-symbols-outlined text-[#CCCCCC]">drag_indicator</span>
+<span class="material-symbols-outlined text-[#CCCCCC] text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mt-3">
+<span class="bg-[#dcfce7] text-[#16a34a] text-[10px] font-bold px-2 py-0.5 rounded-full">Public — Gratuit ✓</span>
+<span class="bg-surface-container-low text-secondary text-[10px] font-medium px-2 py-0.5 rounded-full">9 min au stand ⏱</span>
+</div>
+</article>
+<!-- CARD 4 (DIMMED) -->
+<article class="mx-4 bg-surface-container-lowest rounded-[24px] p-[18px] shadow-[0_2px_12px_rgba(26,26,46,0.06)] opacity-75">
+<div class="flex items-center gap-4">
+<div class="text-[28px] font-extrabold italic text-on-surface/20 leading-none">04</div>
+<div class="w-11 h-11 bg-white rounded-[12px] p-1.5 shadow-[0_1px_4px_rgba(0,0,0,0.08)] flex items-center justify-center">
+<div class="bg-[#FF6B35] text-white text-[10px] font-black px-1.5 py-0.5 rounded-sm">IIM</div>
+</div>
+<div class="flex-1">
+<h3 class="text-[15px] font-bold text-on-surface leading-tight">IIM Paris</h3>
+<p class="text-[12px] text-on-surface/50 font-medium">Bachelor Communication Digitale</p>
+</div>
+<div class="flex flex-col gap-2 items-end">
+<span class="material-symbols-outlined text-[#CCCCCC]">drag_indicator</span>
+<span class="material-symbols-outlined text-[#CCCCCC] text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5 mt-3">
+<span class="bg-surface-container-low text-on-surface/40 text-[10px] font-medium px-2 py-0.5 rounded-full">Non visité au salon</span>
+<span class="bg-[#fff7ed] text-[#F97316] text-[10px] font-bold px-2 py-0.5 rounded-full">Ajouté manuellement</span>
+</div>
+</article>
+<!-- CARD 5 (ADD) -->
+<div class="mx-4 h-[72px] rounded-[24px] border-2 border-dashed border-outline-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary text-[28px]">add_circle</span>
+<span class="text-[13px] font-bold text-primary">Ajouter une école</span>
+</div>
+</main>
+<!-- NOT YET ADDED -->
+<section class="bg-surface-container-low py-6 px-5 mt-4">
+<h2 class="text-[12px] font-bold uppercase tracking-widest text-on-surface/50 mb-4">Écoles visitées non encore ajoutées</h2>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<!-- Chip 1 -->
+<div class="flex-shrink-0 bg-surface-container-lowest rounded-full py-2.5 px-3.5 flex items-center gap-3 shadow-[0_1px_6px_rgba(0,0,0,0.06)]">
+<div class="w-10 h-10 bg-[#8B5CF6] text-white text-[9px] font-black flex items-center justify-center rounded-full">ICAN</div>
+<div class="flex flex-col">
+<span class="text-[12px] font-bold leading-none">ICAN Paris</span>
+<span class="text-[10px] text-on-surface/50">12 min</span>
+</div>
+<button class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<!-- Chip 2 -->
+<div class="flex-shrink-0 bg-surface-container-lowest rounded-full py-2.5 px-3.5 flex items-center gap-3 shadow-[0_1px_6px_rgba(0,0,0,0.06)]">
+<div class="w-10 h-10 bg-[#059669] text-white text-[9px] font-black flex items-center justify-center rounded-full">CNAM</div>
+<div class="flex flex-col">
+<span class="text-[12px] font-bold leading-none">CNAM</span>
+<span class="text-[10px] text-on-surface/50">7 min</span>
+</div>
+<button class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- MATCH INSIGHTS STRIP -->
+<section class="py-4">
+<div class="flex gap-3 overflow-x-auto no-scrollbar px-5">
+<div class="flex-shrink-0 bg-secondary-fixed text-on-secondary-container px-4 py-2.5 rounded-full text-[12px] font-medium whitespace-nowrap flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">target</span>
+                Tes 5 écoles couvrent 3 domaines
+            </div>
+<div class="flex-shrink-0 bg-[#dcfce7] text-[#16a34a] px-4 py-2.5 rounded-full text-[12px] font-medium whitespace-nowrap flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+                2 alternance disponibles
+            </div>
+<div class="flex-shrink-0 bg-[#fff7ed] text-[#F97316] px-4 py-2.5 rounded-full text-[12px] font-medium whitespace-nowrap flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+                4 à Paris, 1 en ligne
+            </div>
+</div>
+</section>
+<!-- SHARE WITH PARENTS CARD -->
+<section class="mx-4 my-6 rounded-[28px] overflow-hidden relative shadow-xl">
+<div class="absolute inset-0 bg-gradient-to-br from-[#1A1A2E] to-[#2D1B69]"></div>
+<img class="absolute inset-0 w-full h-full object-cover opacity-[0.08]" data-alt="young French student showing phone screen to parents at home, evening warm light, realistic photo, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHGS7OYUifhtNQNjKR4ukKkFdjp8pO37eI8ygcKW3x7PB_LLDfZleQgZIZ9TUAvgO0MT3HqwYT-jL9yHdMJd7eQp2LTQ3-U2jULRY82fMQSHZWRUEzyrwzfuoEEbKn4Qy5rDXxv76KQs4Ph2cWlXZW7IShxLbf0A83DAKqYAM9RoSvLNQDIcVGre0MCkkkcA184iG_qzeOn9k5vU9HkI-P_jGaeJQR6yppOAt-YgrvsCIVvjRvzP35GADJjrVDykQwkpkmqMgwwOA"/>
+<div class="relative z-10 p-6">
+<h2 class="text-[18px] font-black italic uppercase text-white tracking-tight">Partage with tes parents</h2>
+<p class="text-[12px] text-white/65 mt-1 mb-5">Montre-leur pourquoi ces écoles sont sérieuses</p>
+<div class="bg-white/10 rounded-[16px] p-3.5 mb-4 backdrop-blur-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[#25D366] text-[20px]">chat</span>
+<span class="text-[11px] text-white/70 font-medium">Aperçu du message</span>
+</div>
+<div class="bg-black/25 rounded-[10px] p-3 font-mono text-[10px] text-white/80 leading-relaxed">
+                    🎓 Ma shortlist Parcoursup après le Salon:<br/>
+                    1. ESGI Paris — Game Design (alternance)<br/>
+                    2. HETIC Paris — Numérique<br/>
+                    3. Université Paris 8 — Informatique (public)<br/>
+                    ↗️ stamp-larry.letudiant.fr/shortlist/THO-2026
+                </div>
+</div>
+<div class="flex gap-2.5">
+<button class="flex-1 bg-[#25D366] text-white text-[13px] font-bold h-12 rounded-[14px] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                    Envoyer via WhatsApp
+                </button>
+<button class="bg-white/12 text-white text-[13px] font-medium h-12 px-5 rounded-[14px] flex items-center justify-center">
+                    Par email
+                </button>
+</div>
+</div>
+</section>
+<!-- PARCOURSUP DEADLINE COUNTDOWN -->
+<section class="mx-4 mb-32 bg-[#fff7ed] rounded-[20px] p-[18px]">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#F97316] text-[20px]" style="font-variation-settings: 'FILL' 1;">event</span>
+<span class="text-[13px] font-bold text-on-surface">Clôture Parcoursup</span>
+</div>
+<span class="text-[12px] font-bold text-[#F97316]">3 mars 2026</span>
+</div>
+<div class="mt-3">
+<div class="h-2 bg-[#fed7aa] rounded-full overflow-hidden">
+<div class="h-full bg-[#F97316] w-[70%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-[#92400e] mt-2 font-medium">J-18 • Valide ta liste avant la date limite</p>
+</div>
+<div class="flex justify-center mt-3">
+<a class="text-[13px] font-bold text-[#F97316] underline" href="#">Ouvrir Parcoursup →</a>
+</div>
+</section>
+<!-- BottomNavBar (as defined in JSON) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-end px-4 pb-6 pt-2 bg-[#fcf8ff]/90 backdrop-blur-xl z-50">
+<div class="flex flex-col items-center justify-center text-[#2f2e43] opacity-50 p-2">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Accueil</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl p-3 shadow-lg shadow-red-500/30 scale-110 -translate-y-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">credit_card</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Ma Carte</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] opacity-50 p-2">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Scanner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] opacity-50 p-2">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Classement</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] opacity-50 p-2">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-bold uppercase tracking-widest mt-1">Profil</span>
+</div>
+</nav>
+
+```</body></html>

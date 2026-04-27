@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#410001",
+                    "on-surface": "#1a1a2e",
+                    "on-primary-container": "#fff5f3",
+                    "on-tertiary-container": "#fff5f6",
+                    "tertiary-fixed": "#ffd8e6",
+                    "on-secondary-fixed": "#1e055a",
+                    "secondary": "#6252a1",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "on-background": "#1a1a2e",
+                    "inverse-on-surface": "#f2efff",
+                    "background": "#fcf8ff",
+                    "inverse-surface": "#2f2e43",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#bbaaff",
+                    "tertiary": "#a51d6b",
+                    "surface-variant": "#e2e0fc",
+                    "tertiary-container": "#c53a84",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary-fixed": "#3d0024",
+                    "surface-container-low": "#f5f2ff",
+                    "surface-container": "#efecff",
+                    "surface-dim": "#dad7f3",
+                    "surface": "#fcf8ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#e9bcb6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "surface-bright": "#fcf8ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930007",
+                    "primary-fixed": "#ffdad5",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "outline": "#936e69",
+                    "on-surface-variant": "#5e3f3b",
+                    "on-secondary-container": "#4a3b88",
+                    "primary-container": "#e30613",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-tint": "#c0000c",
+                    "primary": "#b5000b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .petal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            overflow: hidden;
+        }
+        .petal {
+            position: absolute;
+            background: #e30613;
+            width: 12px;
+            height: 12px;
+            border-radius: 100% 0 100% 0;
+            opacity: 0.6;
+            filter: blur(1px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-white min-h-screen">
+<!-- Petal Rain Layer -->
+<div class="petal-container">
+<!-- 28 Falling Petals placeholder layout -->
+<div class="petal" style="left: 5%; top: -20px; transform: rotate(15deg);"></div>
+<div class="petal" style="left: 15%; top: -50px; transform: rotate(45deg); background: #ffdad5;"></div>
+<div class="petal" style="left: 25%; top: -30px; transform: rotate(100deg);"></div>
+<div class="petal" style="left: 35%; top: -80px; transform: rotate(25deg); background: #c53a84;"></div>
+<div class="petal" style="left: 45%; top: -10px; transform: rotate(180deg);"></div>
+<div class="petal" style="left: 55%; top: -100px; transform: rotate(60deg);"></div>
+<div class="petal" style="left: 65%; top: -40px; transform: rotate(200deg); background: #bbaaff;"></div>
+<div class="petal" style="left: 75%; top: -90px; transform: rotate(15deg);"></div>
+<div class="petal" style="left: 85%; top: -60px; transform: rotate(45deg);"></div>
+<div class="petal" style="left: 95%; top: -20px; transform: rotate(90deg);"></div>
+<div class="petal" style="left: 10%; top: -150px; transform: rotate(30deg);"></div>
+<div class="petal" style="left: 20%; top: -200px; transform: rotate(70deg);"></div>
+<div class="petal" style="left: 30%; top: -120px; transform: rotate(110deg);"></div>
+<div class="petal" style="left: 40%; top: -180px; transform: rotate(160deg);"></div>
+<div class="petal" style="left: 50%; top: -250px; transform: rotate(20deg);"></div>
+<div class="petal" style="left: 60%; top: -140px; transform: rotate(85deg);"></div>
+<div class="petal" style="left: 70%; top: -190px; transform: rotate(135deg);"></div>
+<div class="petal" style="left: 80%; top: -220px; transform: rotate(55deg);"></div>
+<div class="petal" style="left: 90%; top: -110px; transform: rotate(190deg);"></div>
+<div class="petal" style="left: 18%; top: -300px; transform: rotate(15deg);"></div>
+<div class="petal" style="left: 38%; top: -320px; transform: rotate(45deg);"></div>
+<div class="petal" style="left: 58%; top: -340px; transform: rotate(100deg);"></div>
+<div class="petal" style="left: 78%; top: -310px; transform: rotate(25deg);"></div>
+<div class="petal" style="left: 8%; top: -400px; transform: rotate(180deg);"></div>
+<div class="petal" style="left: 28%; top: -420px; transform: rotate(60deg);"></div>
+<div class="petal" style="left: 48%; top: -380px; transform: rotate(200deg);"></div>
+<div class="petal" style="left: 68%; top: -450px; transform: rotate(15deg);"></div>
+<div class="petal" style="left: 88%; top: -390px; transform: rotate(45deg);"></div>
+</div>
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#fcf8ff]/80 dark:bg-[#1a1a2e]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.04)] border-t-4 border-[#e30613]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b5000b]" data-icon="menu">menu</span>
+<span class="text-xl font-black text-[#1a1a2e] dark:text-white font-headline uppercase tracking-tighter relative after:content-[''] after:block after:h-1 after:w-full after:bg-[#e30613]">l'Étudiant</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2f2e43]" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto relative z-20">
+<!-- Intense Gradient Hero Section -->
+<section class="rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary via-primary-container to-secondary p-8 text-white text-center shadow-2xl relative">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10 space-y-6">
+<!-- CEO Larry Emoji Placeholder -->
+<div class="flex justify-center">
+<div class="w-32 h-32 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white/40 shadow-inner">
+<span aria-label="CEO Larry" class="text-6xl" role="img">🤵</span>
+</div>
+</div>
+<div class="space-y-2">
+<h1 class="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none italic">
+                        🎉 Félicitations!
+                    </h1>
+<p class="text-xl font-medium opacity-90">Tu es maintenant CEO Larry!</p>
+</div>
+<!-- Word Reveal Area -->
+<div class="flex justify-center gap-2 pt-4">
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">É</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">T</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">U</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">D</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">I</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">A</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">N</div>
+<div class="w-10 h-14 bg-white text-primary rounded-lg flex items-center justify-center text-2xl font-black shadow-lg">T</div>
+</div>
+</div>
+</section>
+<!-- Goodies Box -->
+<section class="mt-12 bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0_30px_60px_rgba(26,26,46,0.08)] relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="flex flex-col items-center mb-8">
+<span class="text-on-surface-variant text-sm font-bold uppercase tracking-widest mb-2">Ton code de retrait unique</span>
+<div class="bg-surface-container px-8 py-4 rounded-2xl border-2 border-dashed border-primary/20 flex items-center gap-4">
+<code class="text-2xl font-black text-primary font-mono tracking-wider">ETUDIANT-2026-LEA</code>
+<button class="text-primary hover:opacity-70">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<h3 class="text-on-surface text-xl font-extrabold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="redeem" data-weight="fill">redeem</span>
+                Tes cadeaux débloqués
+            </h3>
+<!-- 2x2 Prize Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center gap-3 group hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="menu_book">menu_book</span>
+<span class="font-bold text-sm">Carnet Premium</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center gap-3 group hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="edit">edit</span>
+<span class="font-bold text-sm">Stylo Édition Limitée</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center gap-3 group hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-bold text-sm">Tote Bag Coton Bio</span>
+</div>
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-col items-center text-center gap-3 group hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-4xl" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-bold text-sm">Pass VIP Étudiant</span>
+</div>
+</div>
+</section>
+<!-- Final Action CTA -->
+<div class="mt-10 flex flex-col gap-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-white py-5 rounded-2xl font-black text-xl shadow-xl shadow-primary/20 flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-95 transition-all">
+<span>🚀 Partager ma victoire</span>
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<button class="w-full py-4 text-on-surface-variant font-bold hover:bg-surface-container-low rounded-xl transition-colors">
+                Retour au tableau de bord
+            </button>
+</div>
+</main>
+<!-- Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-end pb-6 px-4 bg-[#fcf8ff]/85 dark:bg-[#1a1a2e]/85 backdrop-blur-md shadow-[0_-10px_30px_rgba(26,26,46,0.06)] rounded-t-[24px]">
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-opacity">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-opacity">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Ma Carte</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-opacity">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Scanner</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-opacity">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Classement</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl p-3 -mt-6 shadow-lg shadow-[#b5000b]/20 active:scale-90 transition-transform duration-300 ease-out">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Profil</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#e30613",
+                    "on-background": "#1a1a2e",
+                    "secondary-fixed": "#e7deff",
+                    "outline-variant": "#e9bcb6",
+                    "inverse-surface": "#2f2e43",
+                    "tertiary-fixed": "#ffd8e6",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#c0000c",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "surface-bright": "#fcf8ff",
+                    "on-tertiary-container": "#fff5f6",
+                    "on-primary-fixed": "#410001",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e8e5ff",
+                    "tertiary": "#a51d6b",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-variant": "#e2e0fc",
+                    "surface-container": "#efecff",
+                    "on-tertiary-fixed": "#3d0024",
+                    "outline": "#936e69",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#4a3b88",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#bbaaff",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "primary": "#b5000b",
+                    "on-surface-variant": "#5e3f3b",
+                    "secondary": "#6252a1",
+                    "on-secondary-fixed": "#1e055a",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#c53a84",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "background": "#fcf8ff",
+                    "surface-container-highest": "#e2e0fc",
+                    "surface": "#fcf8ff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#930007",
+                    "on-primary-container": "#fff5f3",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "on-surface": "#1a1a2e",
+                    "surface-dim": "#dad7f3",
+                    "primary-fixed": "#ffdad5",
+                    "inverse-on-surface": "#f2efff",
+                    "surface-container-low": "#f5f2ff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .sakura-bg {
+            background-image: radial-gradient(circle at 20% 30%, rgba(255, 240, 245, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 80% 70%, rgba(255, 240, 245, 0.05) 0%, transparent 20%);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<nav class="fixed top-0 w-full z-50 bg-[#fcf8ff]/80 dark:bg-[#1a1a2e]/80 backdrop-blur-md shadow-[0_20px_40px_-15px_rgba(26,26,46,0.06)] flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden shadow-lg">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Portrait of Valérie, a 49-year-old woman with a calm and kind expression, soft natural lighting, elegant academic setting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe1M4NpJu27ojSD2BXGjYFkzYmyMAGuwSH43F5vqcB-hz1bRXPXd-NYDnObUjunT3uCbaWdGmd7uJQbvKi6DgPq1QpYJjB6mkpAFduoMxDaS4qIewX_5rpmzK2xxFlu00yHGDdn0wDxa1jAEox5DF23MTfvSMjdq3qQr5-IL36qQjZejkdBVIhhknvALapnexDCik3wtTkNkm_yUVhzdMzIkfM6lzQQKUFWysjlnnUZILDRwZJdFIu4aC9jJwxnz1B1x3b59m93q4"/>
+</div>
+<span class="text-xl font-black text-[#1a1a2e] dark:text-white italic font-['Inter'] font-extrabold tracking-tight uppercase">Stamp Larry</span>
+</div>
+<button class="text-[#e30613] hover:bg-[#f5f2ff] p-2 rounded-full transition-colors active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</nav>
+<header class="relative pt-16 bg-inverse-surface min-h-[340px] overflow-hidden flex flex-col justify-start px-6">
+<div class="absolute inset-0 sakura-bg opacity-40"></div>
+<div class="relative z-10 pt-10">
+<h1 class="text-surface-bright text-4xl font-black tracking-tight leading-tight">
+                Bonjour,<br/>Valérie
+            </h1>
+<p class="text-surface-variant/80 mt-2 text-lg font-medium max-w-[240px]">
+                Préparez l'avenir de votre enfant en toute sérénité.
+            </p>
+</div>
+<div class="absolute top-10 right-[-20px] opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[120px] text-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</header><div class="bg-surface px-6 py-4 flex items-center justify-between border-b border-outline-variant/10">
+<span class="text-[11px] font-bold text-[#E30613] uppercase flex items-center gap-1.5">
+    Inscription <span class="text-[8px]">●</span>
+</span>
+<span class="text-[11px] font-bold text-[#CCCCCC] uppercase">
+    Suivi au salon
+  </span>
+<span class="text-[11px] font-bold text-[#CCCCCC] uppercase">
+    Bilan reçu par email
+  </span>
+</div>
+<main class="relative z-20 px-6 -mt-20">
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_20px_50px_rgba(26,26,46,0.1)] p-6 mb-10">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold tracking-tight text-on-surface">Inscription Enfant</h2>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Étape 1/3</span>
+</div>
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1.5 ml-1">Prénom de l'enfant</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/20 placeholder:text-outline-variant" placeholder="ex: Thomas" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1.5 ml-1">Classe</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>Seconde</option>
+<option>Première</option>
+<option>Terminale</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-1.5 ml-1">Budget</label>
+<select class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface focus:ring-2 focus:ring-primary/20 appearance-none">
+<option>5k - 10k €</option>
+<option>10k - 20k €</option>
+<option>20k € +</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold text-outline uppercase tracking-widest mb-3 ml-1">Centres d'intérêt</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="palette">palette</span> Arts
+                        </span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span> Tech
+                        </span>
+<span class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Ajouter
+                        </span>
+</div>
+</div>
+<button class="w-full mt-4 bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white font-bold py-4 rounded-xl shadow-lg shadow-[#e30613]/20 active:scale-95 transition-all" onclick="alert('→ parent_bilan_personnalis')">Créer mon espace parent</button><p class="mt-3 text-center text-[10px] font-medium text-outline-variant leading-tight px-4">
+  Vous recevrez le bilan de Julien par email 24h après le salon.
+</p>
+</form>
+</section>
+<section class="mb-10">
+<div class="flex justify-between items-end mb-6">
+<h2 class="text-2xl font-black tracking-tight text-inverse-surface">Tableau de bord</h2>
+<button class="text-primary font-bold text-sm">Voir tout</button>
+</div>
+<div class="flex gap-5 overflow-x-auto hide-scrollbar -mx-6 px-6 pb-4">
+<div class="flex-none w-72 bg-surface-container-low rounded-[2rem] p-6 relative overflow-hidden group cursor-pointer active:scale-[0.98] transition-transform" onclick="alert('Aperçu → parent_bilan_personnalis')">
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-tertiary/10 rounded-full blur-2xl"></div>
+<div class="mb-8 bg-surface-container-lowest w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="history_edu">history_edu</span>
+</div>
+<h3 class="text-xl font-extrabold text-on-background mb-2">Résumé des visites</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Derniers campus consultés pour le cursus ingénieur.</p>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest overflow-hidden">
+<img alt="Campus" class="w-full h-full object-cover" data-alt="Close up architectural detail of a modern university building with large glass windows and sunlight reflecting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC610ZWVHF-0GsaYwXhxTPEdnnhQgWbdIU-kcFvlaIDYZHqNu_GfB1d6XZUwS92eMkyqGABQ5vtNwHPC6HWI7FUOuf0xzYGkliu8zgfJ7gqIp-jwbdumR-LUhROtu7Nh-S-ar8zA5R3Cx9vpzrna5R7nWsrBMyTTbfswPWGqZl5uRuXG-NJAnuUorV7reVba37ZHnb2nJlkpLD_hp9NUi1P0T413Ddt6i-Z3fecRaC0SmttzyLhnrBja4U1LYKWwy7SA6IW1gHe500"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest overflow-hidden">
+<img alt="Campus" class="w-full h-full object-cover" data-alt="Traditional historic university library with wooden shelves and focused students" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6T4D2Ms1CxP62fmM2NOK69YE0KRy8lmIsup_JF6qttVRK04EL9iPsCy3y-fRID8mZ3MGXN3GWUCg7oAgEpyh4Urbj0efjtaPD6kHcIsenuGhrJLjF295WnVV715rVkM2Z1i3uWF_gPUarZ3Y35tHWbo4koDcVlJFeCtXzhXfkB39si8Beu6rjdniL2E9Nyqqh2o9K6YcrIC3Ea6Uss9EMvMY_9dUPB1_exj-k2k2umEQubtSG5uWTfflfMuTht7tnLdZ_iIHPdeY"/>
+</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-[10px] font-bold text-on-tertiary-fixed-variant">
+                            +2
+                        </div>
+</div>
+</div>
+<div class="flex-none w-72 bg-[#FFF0F5] rounded-[2rem] p-6 relative overflow-hidden">
+<div class="mb-8 bg-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[#F97316]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h3 class="text-xl font-extrabold text-on-background mb-2">Comparatif financier</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">Analyse des coûts de scolarité vs aides disponibles.</p>
+<div class="h-1.5 w-full bg-white/50 rounded-full overflow-hidden">
+<div class="h-full bg-[#F97316] w-[65%] rounded-full"></div>
+</div>
+<div class="mt-2 text-[10px] font-black uppercase text-[#F97316]">65% du budget alloué</div>
+</div>
+<div class="flex-none w-72 bg-surface-container rounded-[2rem] p-6 relative overflow-hidden">
+<div class="mb-8 bg-surface-container-lowest w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="event_note">event_note</span>
+</div>
+<h3 class="text-xl font-extrabold text-on-background mb-2">Dates importantes</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-4">J-14 avant la fin des voeux Parcoursup.</p>
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 text-primary p-2 rounded-lg font-mono text-xs font-bold">15 MARS</div>
+<div class="w-px h-4 bg-outline-variant"></div>
+<div class="text-[10px] font-bold text-outline uppercase tracking-wider">Clôture des dossiers</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-inverse-surface rounded-[2rem] p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full sakura-bg opacity-10"></div>
+<span class="material-symbols-outlined text-tertiary-fixed text-4xl mb-4 block" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h3 class="text-white text-xl font-bold mb-2">Accompagnement Premium</h3>
+<p class="text-surface-variant/70 text-sm leading-relaxed mb-6">Bénéficiez d'un conseiller dédié pour orienter votre enfant vers l'excellence.</p>
+<button class="inline-flex items-center gap-2 bg-surface-bright text-inverse-surface font-black px-6 py-3 rounded-full text-sm uppercase tracking-tight">
+                Découvrir l'offre <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-[#fcf8ff]/90 dark:bg-[#1a1a2e]/95 backdrop-blur-xl rounded-t-[2rem]">
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl px-5 py-2 shadow-lg shadow-[#e30613]/20 active:scale-90 duration-300 cubic-bezier(0.34,1.56,0.64,1)">
+<span class="material-symbols-outlined text-xl" data-icon="explore">explore</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Explorer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-slate-400 px-4 py-2 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300">
+<span class="material-symbols-outlined text-xl" data-icon="school">school</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Orientation</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-slate-400 px-4 py-2 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300">
+<span class="material-symbols-outlined text-xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Favoris</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-slate-400 px-4 py-2 opacity-60 hover:opacity-100 transition-opacity active:scale-90 duration-300">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Compte</span>
+</div>
+</footer>
+</body></html>

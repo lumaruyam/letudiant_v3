@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2efff",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2f2e43",
+                    "outline-variant": "#e9bcb6",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#410001",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1a2e",
+                    "primary-container": "#e30613",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "tertiary-container": "#c53a84",
+                    "primary-fixed": "#ffdad5",
+                    "surface-tint": "#c0000c",
+                    "on-surface-variant": "#5e3f3b",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary": "#a51d6b",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "surface-dim": "#dad7f3",
+                    "surface-container": "#efecff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#930007",
+                    "on-primary-container": "#fff5f3",
+                    "on-background": "#1a1a2e",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-container": "#bbaaff",
+                    "surface-container-low": "#f5f2ff",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-secondary-fixed": "#1e055a",
+                    "error-container": "#ffdad6",
+                    "outline": "#936e69",
+                    "background": "#fcf8ff",
+                    "secondary": "#6252a1",
+                    "on-secondary-container": "#4a3b88",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e0fc",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#b5000b",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "tertiary-fixed": "#ffd8e6",
+                    "surface": "#fcf8ff",
+                    "on-tertiary-container": "#fff5f6",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-bright": "#fcf8ff",
+                    "on-tertiary-fixed": "#3d0024"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1rem",
+                    "3xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-header { background: rgba(26, 26, 46, 0.9); backdrop-filter: blur(12px); }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-24">
+<!-- TOP APP BAR -->
+<header class="bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-secondary-container">
+<img alt="Sophie Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a 34-year old woman with a friendly expression, soft lighting, clean corporate studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaOBYo2J0IfIaj8SoYJlgvYd2sYvoiKd2coZzwDgMXf5MJr8GlyLbOWm_rQsQYZQ7mgTxZhMDQT-rBozZPp-0dkOE8bK5QV_7aDrQAF5pwUnBl3K7f5hKx1Wy8fqbBqdIzkwRllohRky2mWGBTbpZCit5VupF6HZxEGkJksRJ8POuCa5nDmOztjYb2Ylw6815HWK7LKCgCw_Hpl1-Y9AEj6AAdcyKJ5KNOthjuywJ89UKqy3ukJ4_SU8cls7NvbhlCTUF2KSyz2vI"/>
+</div>
+<span class="font-['Inter'] font-extrabold tracking-tighter text-white uppercase text-sm">Admin Sophie</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold text-slate-400 tracking-widest bg-white/5 px-2 py-1 rounded uppercase">Stamp Larry</span>
+<span class="material-symbols-outlined text-white text-xl">notifications</span>
+</div>
+</header>
+<!-- CONTEXT BAR -->
+<div class="w-full bg-surface-container-low px-6 py-4 flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<h1 class="text-xs font-black uppercase tracking-widest text-on-surface-variant">Salon Bordeaux — 7 avril 2026</h1>
+<div class="bg-surface-container-lowest px-3 py-1.5 rounded-full flex items-center gap-2 shadow-sm active:scale-95 transition-transform">
+<span class="text-[11px] font-bold text-on-surface">Tous les exposants</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</div>
+<main class="px-6 py-6 space-y-8">
+<!-- LEAD OVERVIEW ASYMMETRIC GRID -->
+<section class="grid grid-cols-2 gap-4">
+<!-- LARGE CARD -->
+<div class="col-span-2 bg-inverse-surface p-6 rounded-3xl relative overflow-hidden flex flex-col justify-between h-40">
+<div class="z-10">
+<p class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">Total Leads</p>
+<h2 class="text-5xl font-black text-white italic tracking-tighter">1 247</h2>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div class="z-10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-[10px] font-bold text-primary-fixed uppercase tracking-wider">Sync. en temps réel</span>
+</div>
+</div>
+<!-- GOLD CARD -->
+<div class="bg-surface-container-lowest p-5 rounded-3xl shadow-sm flex flex-col justify-between h-36">
+<div>
+<span class="material-symbols-outlined text-amber-500" style="font-variation-settings: 'FILL' 1;">stars</span>
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mt-2">Gold Leads</p>
+</div>
+<h3 class="text-3xl font-black text-on-surface">223</h3>
+</div>
+<!-- SILVER CARD -->
+<div class="bg-secondary-fixed p-5 rounded-3xl flex flex-col justify-between h-36">
+<div>
+<span class="material-symbols-outlined text-on-secondary-fixed">workspace_premium</span>
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-secondary-fixed mt-2">Silver Leads</p>
+</div>
+<h3 class="text-3xl font-black text-on-secondary-fixed">435</h3>
+</div>
+<!-- BRONZE CARD WIDE -->
+<div class="col-span-2 bg-surface-container-low p-6 rounded-3xl flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant">Bronze Leads</p>
+<h3 class="text-3xl font-black text-on-surface mt-1">589</h3>
+</div>
+<div class="bg-orange-100 text-orange-700 px-4 py-2 rounded-2xl flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">warning</span>
+<span class="text-[11px] font-bold leading-tight">⚠️ Zéro signal<br/>comportemental</span>
+</div>
+</div>
+</section>
+<!-- NON-CONVERTED ALERT -->
+<section class="bg-[#fff7ed] p-5 rounded-3xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-orange-200 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-700">timer</span>
+</div>
+<div>
+<p class="text-sm font-bold text-orange-950">187 leads en attente</p>
+<p class="text-[10px] font-medium text-orange-800 uppercase tracking-wide">Non-contactés depuis 48h</p>
+</div>
+</div>
+<button class="bg-white text-orange-700 text-[11px] font-black uppercase px-4 py-2 rounded-xl shadow-sm active:scale-95 transition-transform">Relance</button>
+</section>
+<!-- TIER DEFINITIONS ACCORDION -->
+<section class="bg-surface-container-lowest p-6 rounded-3xl shadow-[0_4px_20px_rgba(26,26,46,0.05)]">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-xs font-black uppercase tracking-widest text-on-surface">Définitions des Tiers</h4>
+<span class="material-symbols-outlined text-on-surface-variant">info</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-1 h-10 rounded-full bg-amber-500 shrink-0"></div>
+<div>
+<p class="text-[11px] font-extrabold uppercase text-on-surface">Tier Gold</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Profil complet + Consentement marketing + Intérêt manifesté sur 3+ stands.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 h-10 rounded-full bg-slate-300 shrink-0"></div>
+<div>
+<p class="text-[11px] font-extrabold uppercase text-on-surface">Tier Silver</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">Profil complet + Intérêt ciblé. Manque consentement tiers.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- LEAD TABLE -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h4 class="text-xs font-black uppercase tracking-widest text-on-surface">Leads récents</h4>
+<span class="text-[10px] font-bold text-primary italic">Voir tout</span>
+</div>
+<div class="space-y-3">
+<!-- Lead Row 1 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-amber-500"></div>
+<div>
+<p class="text-[13px] font-bold text-on-surface">Lucas Bernard</p>
+<div class="flex gap-1 mt-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[8px] font-bold px-2 py-0.5 rounded uppercase">Ingénierie</span>
+<span class="bg-surface-container-low text-on-surface-variant text-[8px] font-bold px-2 py-0.5 rounded uppercase italic">Bordeaux</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg" data-weight="fill">verified_user</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">mail</span>
+</div>
+</div>
+<!-- Lead Row 2 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-slate-300"></div>
+<div>
+<p class="text-[13px] font-bold text-on-surface">Emma Gauthier</p>
+<div class="flex gap-1 mt-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[8px] font-bold px-2 py-0.5 rounded uppercase">Commerce</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg opacity-30">verified_user</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">mail</span>
+</div>
+</div>
+<!-- Lead Row 3 -->
+<div class="bg-white p-4 rounded-2xl shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-amber-500"></div>
+<div>
+<p class="text-[13px] font-bold text-on-surface">Thomas Petit</p>
+<div class="flex gap-1 mt-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[8px] font-bold px-2 py-0.5 rounded uppercase">Droit</span>
+<span class="bg-orange-100 text-orange-700 text-[8px] font-bold px-2 py-0.5 rounded uppercase">High Intent</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-green-500 text-lg" data-weight="fill">verified_user</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">mail</span>
+</div>
+</div>
+</div>
+</section>
+<!-- EXHIBITOR BREAKDOWN -->
+<section class="space-y-4">
+<h4 class="text-xs font-black uppercase tracking-widest text-on-surface">Top Exposants</h4>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-6 px-6">
+<!-- Card 1 -->
+<div class="min-w-[160px] bg-white p-5 rounded-3xl shadow-sm flex flex-col justify-between h-44">
+<div>
+<div class="w-10 h-10 bg-slate-100 rounded-xl mb-3 flex items-center justify-center font-black text-slate-400">E.</div>
+<p class="text-xs font-black uppercase text-on-surface">ESSEC</p>
+</div>
+<div>
+<p class="text-2xl font-black text-primary">142</p>
+<p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider">Leads qualifiés</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[160px] bg-white p-5 rounded-3xl shadow-sm flex flex-col justify-between h-44 border-t-4 border-primary">
+<div>
+<div class="w-10 h-10 bg-slate-100 rounded-xl mb-3 flex items-center justify-center font-black text-slate-400">S.</div>
+<p class="text-xs font-black uppercase text-on-surface">Sciences Po</p>
+</div>
+<div>
+<p class="text-2xl font-black text-primary">108</p>
+<p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider">Leads qualifiés</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[160px] bg-white p-5 rounded-3xl shadow-sm flex flex-col justify-between h-44">
+<div>
+<div class="w-10 h-10 bg-slate-100 rounded-xl mb-3 flex items-center justify-center font-black text-slate-400">I.</div>
+<p class="text-xs font-black uppercase text-on-surface">IAE Bordeaux</p>
+</div>
+<div>
+<p class="text-2xl font-black text-primary">94</p>
+<p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-wider">Leads qualifiés</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVBAR -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl docked full-width rounded-t-[24px] overflow-hidden shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined mb-1">sensors</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide">Live</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#b5000b] to-[#e30613] text-white rounded-[12px] px-5 py-2 scale-110 shadow-lg shadow-[#b5000b]/20 active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined mb-1">person_search</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide">Leads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined mb-1">group_work</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide">Groupes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined mb-1">verified_user</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide">RGPD</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#410001",
+                    "on-surface": "#1a1a2e",
+                    "on-primary-container": "#fff5f3",
+                    "on-tertiary-container": "#fff5f6",
+                    "tertiary-fixed": "#ffd8e6",
+                    "on-secondary-fixed": "#1e055a",
+                    "secondary": "#6252a1",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "on-background": "#1a1a2e",
+                    "inverse-on-surface": "#f2efff",
+                    "background": "#fcf8ff",
+                    "inverse-surface": "#2f2e43",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#bbaaff",
+                    "tertiary": "#a51d6b",
+                    "surface-variant": "#e2e0fc",
+                    "tertiary-container": "#c53a84",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary-fixed": "#3d0024",
+                    "surface-container-low": "#f5f2ff",
+                    "surface-container": "#efecff",
+                    "surface-dim": "#dad7f3",
+                    "surface": "#fcf8ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#e9bcb6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "surface-bright": "#fcf8ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930007",
+                    "primary-fixed": "#ffdad5",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "outline": "#936e69",
+                    "on-surface-variant": "#5e3f3b",
+                    "on-secondary-container": "#4a3b88",
+                    "primary-container": "#e30613",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-tint": "#c0000c",
+                    "primary": "#b5000b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "mono": ["Courier New"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .asymmetric-gradient {
+        background: linear-gradient(135deg, #b5000b 0%, #e30613 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed antialiased">
+<!-- Top Navigation Shell -->
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#fcf8ff]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.04)] border-t-4 border-[#e30613]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface" data-icon="menu">menu</span>
+<span class="font-headline font-extrabold uppercase tracking-tighter text-xl text-on-surface dark:text-white after:content-[''] after:block after:h-1 after:w-full after:bg-[#e30613]">l'Étudiant</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface text-2xl" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Header Section -->
+<section class="flex flex-col gap-1">
+<h1 class="text-4xl font-headline font-black tracking-tight">Bonjour Léa 👋</h1>
+<p class="text-on-surface-variant font-medium opacity-70">Ton aventure continue au salon.</p>
+</section>
+<!-- Larry Character Bento Card -->
+<div class="glass-card rounded-xl p-6 shadow-[0_10px_30px_rgba(26,26,46,0.04)] relative overflow-hidden flex items-center justify-between gap-6 border border-white/40">
+<div class="flex flex-col gap-2 z-10">
+<div class="flex items-center gap-2">
+<span class="text-xs font-black uppercase tracking-widest text-primary px-2 py-1 bg-primary-fixed rounded-full">En Mission</span>
+</div>
+<h2 class="text-2xl font-headline font-extrabold leading-tight">Stagiaire Larry</h2>
+<p class="text-sm text-on-surface-variant max-w-[160px]">Aide Larry à compléter son rapport de stage !</p>
+</div>
+<div class="relative flex items-center justify-center">
+<!-- Circular Progress Ring -->
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="54" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="54" stroke="currentColor" stroke-dasharray="339.29" stroke-dashoffset="169.64" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-2xl font-black">4/8</span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Stands</span>
+</div>
+</div>
+<!-- Subtle background decorative image -->
+<div class="absolute -right-8 -bottom-8 opacity-10 rotate-12">
+<img alt="Friendly minimalist academic mascot character silhouette with high contrast digital art style" class="w-48 h-48 object-contain" data-alt="minimalist digital illustration of a friendly scholarly mascot character with a graduate cap in clean line art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2_kgxgNKusLAmnkF3D7lH8S2IGmE45AcOiDqnJ5G_dmiRQHxI2Oyj8rzRzA1r2sSS5eXDDTEOho-RUtFmoXoki6snp8Az1LnGmQ9XelEOY3C8pqN9f966H1bt1Fxu-pe1i1fOrb2bYkDHKw1PjEjanrssK_dJUAjAbic6Qosn1Q57vvef7_mL2tf7RTi--4uasBB-Dd7CfAbxg-PnJM0UsW-F42GDbxZPfy3LLW_Sd2f24Jqh60Yk-FzLV06rNLT-qUYy-QQtGEE"/>
+</div>
+</div>
+<!-- Quick Stats Grid -->
+<div class="grid grid-cols-3 gap-3">
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="storefront">storefront</span>
+<span class="text-xl font-black">04</span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Visités</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="timer">timer</span>
+<span class="text-xl font-black">1h42</span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Sur place</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex flex-col gap-1">
+<span class="material-symbols-outlined text-tertiary-container text-xl" data-icon="podcasts">podcasts</span>
+<span class="text-xl font-black">01</span>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Conférence</span>
+</div>
+</div>
+<!-- Letter Grid Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="text-sm font-black uppercase tracking-widest text-on-surface-variant">Code Secret</h3>
+<span class="text-[10px] font-bold text-primary">50% COMPLÉTÉ</span>
+</div>
+<!-- Letter Slots -->
+<div class="grid grid-cols-4 sm:grid-cols-8 gap-3">
+<div class="aspect-square bg-primary text-white flex items-center justify-center rounded-xl text-2xl font-black shadow-lg shadow-primary/20">É</div>
+<div class="aspect-square bg-primary text-white flex items-center justify-center rounded-xl text-2xl font-black shadow-lg shadow-primary/20">T</div>
+<div class="aspect-square bg-primary text-white flex items-center justify-center rounded-xl text-2xl font-black shadow-lg shadow-primary/20">U</div>
+<div class="aspect-square bg-primary text-white flex items-center justify-center rounded-xl text-2xl font-black shadow-lg shadow-primary/20">D</div>
+<div class="aspect-square border-2 border-dashed border-surface-variant bg-surface-container-lowest flex items-center justify-center rounded-xl text-2xl font-black text-surface-variant">I</div>
+<div class="aspect-square border-2 border-dashed border-surface-variant bg-surface-container-lowest flex items-center justify-center rounded-xl text-2xl font-black text-surface-variant">A</div>
+<div class="aspect-square border-2 border-dashed border-surface-variant bg-surface-container-lowest flex items-center justify-center rounded-xl text-2xl font-black text-surface-variant">N</div>
+<div class="aspect-square border-2 border-dashed border-surface-variant bg-surface-container-lowest flex items-center justify-center rounded-xl text-2xl font-black text-surface-variant">T</div>
+</div>
+<!-- Monospace Reveal -->
+<div class="bg-inverse-surface p-4 rounded-xl flex justify-center">
+<span class="font-mono text-xl tracking-[0.5em] text-white font-bold">É T U D _ _ _ T</span>
+</div>
+</section>
+<!-- Nearby Stands Horizontal Scroll -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-sm font-black uppercase tracking-widest text-on-surface-variant">Stands à proximité</h3>
+<span class="text-xs font-bold text-secondary">VOIR CARTE</span>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar -mx-6 px-6">
+<!-- Card 1 -->
+<div class="min-w-[180px] bg-white p-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-surface-container-low flex flex-col gap-3">
+<div class="w-full h-24 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Modern university recruitment booth with bright lighting and digital displays for student orientation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzs-UckZ6COxm-TxLPqHHjcif8oO4Pq8FcRGXs52o9Af16__CaPNvAIfR8N4W28SJCnComU8VHA107z4dZhYflZiFfyssJyAvGQeseT0hoDeRzuOuIlxslCLcnQV4O30eop7BuAmDB7dqRg0SEB4OKmb66GOl0po8KYAILml2jh80BLTwk_UZaSnOPegncjKTqSqkhXiUnHjXSivsZkANGJRG9cBTgnnNmUAGs82G2St4XFuIRq-ihvPdRrnR8QFa3ReV4dgxMexI"/>
+</div>
+<div>
+<p class="text-[10px] font-black text-primary uppercase">Espace Ingénieur</p>
+<h4 class="font-bold text-sm leading-tight">ESGI Paris</h4>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[180px] bg-white p-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-surface-container-low flex flex-col gap-3">
+<div class="w-full h-24 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Creative arts school booth featuring vibrant posters and digital art portfolio screens at a student fair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Vvs7sZu_EVG1u8I5fTnkS8TKsjlrMNyl_JHVo4hl2fnvtUhvRMe__9byhOjrxBYaNYObtcQvRZVQ-K8zzjrDyYvr_A5VmZBm6bLkGoKn_WNfPmm2ShSjJbUBqQuQLeoNvYmr4hXLwZhzH7a9zvFiTFTvHYCTbaaUsdl3mQz953dPuPb7-eLhz7ZXULvImhzg-F-zh04H9lFg3Z4vjbz4OHxuPhGponZjciYfM-OUVasb1vXxJ0m5eop9a3Vh0xHzhbP52O-OH_4"/>
+</div>
+<div>
+<p class="text-[10px] font-black text-secondary uppercase">Arts &amp; Design</p>
+<h4 class="font-bold text-sm leading-tight">L'École de Design</h4>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[180px] bg-white p-4 rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.02)] border border-surface-container-low flex flex-col gap-3">
+<div class="w-full h-24 rounded-lg overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Corporate professional stand for banking and finance internships with navy and gold branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXP78M6mK-qvYjcc0FWhYvEdcJ68LKFPc9asfFn-ZdFRoJqE66UWp0rmyWKYHXF41NURNhgHPKGw4e1fuzPb0pq26tZ4sF-m1KIEo6LAbehEvqjJlvVWP-fdAsPs9F3bwkCuR20BB7hB8dAWrRDjgyr2SJDxKCRPGZv0kcgA22-XLxgkSU0IdCCaSY9RpsKuLTl6C0NhklhFAFFgI17GgsMn3pBAEWGZJaBaB2tBEr9S3eZaUu6mxhq3lB29CRkE-B9eDUNjH55zE"/>
+</div>
+<div>
+<p class="text-[10px] font-black text-tertiary uppercase">Banque &amp; Finance</p>
+<h4 class="font-bold text-sm leading-tight">Crédit Agricole</h4>
+</div>
+</div>
+<div class="min-w-[200px] bg-primary/5 border-2 border-primary/20 p-4 rounded-xl flex flex-col justify-between gap-3 cursor-pointer" onclick="location.href='../pendant_ma_carte_visites_1/code.html'">
+<div class="flex justify-between items-start">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="bookmark">bookmark</span>
+</div>
+<div class="bg-white px-2 py-0.5 rounded-full border border-primary/20">
+<span class="text-[10px] font-bold text-primary italic">J-18 ⏰</span>
+</div>
+</div>
+<h4 class="font-bold text-[13px] leading-tight text-on-surface">Ma Shortlist Parcoursup</h4>
+</div></div>
+</section>
+</main>
+<!-- Floating Scanner CTA -->
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full h-[64px] z-50 flex justify-around items-center px-2 bg-[#fcf8ff]/95 backdrop-blur-md border-t border-surface-variant/30">
+<a class="flex flex-col items-center justify-center text-on-surface/60" href="../pendant_tableau_de_bord_1/code.html">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#E30613]" href="../pendant_tableau_de_bord_1/code.html">
+<span class="material-symbols-outlined text-2xl font-variation-fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-[10px] font-bold">Larry</span>
+</a>
+<a class="flex flex-col items-center justify-center -mt-8" href="../pendant_scanner_qr_nfc_1/code.html">
+<div class="w-14 h-14 bg-[#E30613] rounded-full flex items-center justify-center shadow-lg shadow-[#E30613]/40 border-4 border-[#fcf8ff]">
+<span class="material-symbols-outlined text-white text-3xl">qr_code_scanner</span>
+</div>
+<span class="text-[10px] font-bold mt-1 text-on-surface/60">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface/60" href="../pendant_ma_carte_visites_1/code.html">
+<span class="material-symbols-outlined text-2xl">style</span>
+<span class="text-[10px] font-bold">Ma Carte</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface/60" href="../profil_param_tres_1/code.html">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold">Profil</span>
+</a>
+</nav>
+</body></html>

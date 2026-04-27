@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'Étudiant Admin - Gestion des Groupes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2efff",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2f2e43",
+                    "outline-variant": "#e9bcb6",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#410001",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1a2e",
+                    "primary-container": "#e30613",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "tertiary-container": "#c53a84",
+                    "primary-fixed": "#ffdad5",
+                    "surface-tint": "#c0000c",
+                    "on-surface-variant": "#5e3f3b",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary": "#a51d6b",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "surface-dim": "#dad7f3",
+                    "surface-container": "#efecff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#930007",
+                    "on-primary-container": "#fff5f3",
+                    "on-background": "#1a1a2e",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-container": "#bbaaff",
+                    "surface-container-low": "#f5f2ff",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-secondary-fixed": "#1e055a",
+                    "error-container": "#ffdad6",
+                    "outline": "#936e69",
+                    "background": "#fcf8ff",
+                    "secondary": "#6252a1",
+                    "on-secondary-container": "#4a3b88",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e0fc",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#b5000b",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "tertiary-fixed": "#ffd8e6",
+                    "surface": "#fcf8ff",
+                    "on-tertiary-container": "#fff5f6",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-bright": "#fcf8ff",
+                    "on-tertiary-fixed": "#3d0024"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body max-w-[640px] mx-auto min-h-screen relative pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#E30613]" data-icon="grid_view">grid_view</span>
+<h1 class="font-['Inter'] font-extrabold tracking-tighter text-lg uppercase text-white">L'Étudiant Admin</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Data Manager</p>
+<p class="text-xs text-white font-semibold">Sophie</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-[#E30613] overflow-hidden shadow-lg active:scale-95 transition-transform cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Sophie, a professional data manager in her 30s with a confident expression and corporate attire, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDssuiDWvhxzM31jb_rx5hVJDGd6ohjfRCDGv4UP_3Pg4uQgEBYG6RP-ym9Lkb3zZCvTSwgpE1mfr3JioOu8ofvOgfr1plOn1cISLmwNAf4YoZaEP3LGyVLjMlBrx6LOpW6om-Le3Ig2tskxfHfa4VcRa1kwcA38iY8mM5MSoGKD-NhB9-KvCrI2RhP5kbw0XkoXBsbe1FpeIK9ixjlXYO1EIzCWkaeBP-GsmDhQfMSmI3IVxUojKLj5Mp4R5n8OL0IjsXZAqfntu4"/>
+</div>
+</div>
+</header>
+<main class="px-5 pt-6 space-y-6">
+<!-- Summary KPI Row -->
+<section class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-center">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Groupes</span>
+<span class="text-2xl font-black text-on-surface">14</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-center border-l-4 border-[#E30613]">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Élèves</span>
+<span class="text-2xl font-black text-on-surface">312</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col justify-center">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tight">Identifiés</span>
+<span class="text-2xl font-black text-[#E30613]">42%</span>
+</div>
+</section>
+<!-- Insight Card -->
+<section class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#2D1B69] to-[#1A1A2E] p-6 text-white shadow-xl">
+<div class="absolute top-[-20px] right-[-20px] w-32 h-32 bg-[#E30613]/10 blur-3xl rounded-full"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-xl">⚡</span>
+<h2 class="text-lg font-bold tracking-tight">181 élèves restent anonymes</h2>
+</div>
+<p class="text-sm text-slate-300 mb-5 leading-relaxed">Le taux de conversion des groupes scolaires est actuellement inférieur aux objectifs de collecte de données.</p>
+<button class="w-full py-3 bg-[#E30613] hover:bg-[#b5000b] text-white font-bold rounded-lg transition-all active:scale-[0.98] shadow-lg shadow-[#E30613]/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="campaign">campaign</span>
+                    Relancer tous les professeurs
+                </button>
+</div>
+</section>
+<!-- Search + Filter -->
+<section class="space-y-3">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-low border-none rounded-xl text-on-surface placeholder:text-slate-400 focus:ring-2 focus:ring-[#E30613]/20 transition-all" placeholder="Rechercher un lycée..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto no-scrollbar">
+<button class="px-4 py-2 bg-on-surface text-white rounded-full text-xs font-bold whitespace-nowrap">Tous</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-xs font-bold whitespace-nowrap">Actifs</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-xs font-bold whitespace-nowrap">Complets</button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-full text-xs font-bold whitespace-nowrap">À relancer</button>
+</div>
+</section>
+<!-- Group List -->
+<section class="space-y-4">
+<h3 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] px-1">Liste des établissements</h3>
+<!-- Lycée Montaigne (Complet) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-[#22C55E]">
+<span class="material-symbols-outlined" data-icon="domain_verification">domain_verification</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Lycée Montaigne</h4>
+<p class="text-[11px] text-slate-500">45 élèves • 100% Identifiés</p>
+</div>
+</div>
+<span class="bg-[#22C55E]/10 text-[#22C55E] text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">Complet ✅</span>
+</div>
+<!-- Lycée Victor Hugo (Expanded) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden ring-2 ring-[#E30613]/5">
+<div class="p-4 flex items-center justify-between border-b border-surface-container-low">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center text-[#E30613]">
+<span class="material-symbols-outlined" data-icon="school" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Lycée Victor Hugo</h4>
+<p class="text-[11px] text-slate-500">82 élèves • 65% Identifiés</p>
+</div>
+</div>
+<span class="bg-primary/5 text-primary text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">Actif</span>
+</div>
+<div class="bg-surface-container-low/30 p-4 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-xs font-semibold">Tale Scientifique A</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">24/30 ID</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-slate-200"></div>
+<span class="text-xs font-semibold">Tale Éco B</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400">12/28 ID</span>
+</div>
+<button class="w-full text-center text-[11px] font-bold text-[#E30613] py-1 border-t border-surface-container-low mt-2">Voir tous les groupes (5)</button>
+</div>
+</div>
+<!-- Lycée Condorcet (Attention) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Lycée Condorcet</h4>
+<p class="text-[11px] text-slate-500">120 élèves • 12% Identifiés</p>
+</div>
+</div>
+<span class="bg-orange-100 text-orange-600 text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">⚠️ Relancer</span>
+</div>
+<!-- Lycée Racine (Anonyme) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined" data-icon="person_off">person_off</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Lycée Racine</h4>
+<p class="text-[11px] text-slate-500">65 élèves • 0% Identifiés</p>
+</div>
+</div>
+<span class="bg-red-50 text-red-600 text-[10px] font-black px-2 py-1 rounded uppercase tracking-tighter">🔴 Anonyme</span>
+</div>
+</section>
+<!-- Teacher Outreach Stats -->
+<section class="bg-surface-container-high/50 rounded-2xl p-6 space-y-4">
+<div class="flex items-end justify-between">
+<div>
+<h3 class="text-sm font-bold text-on-surface mb-1">Engagement Professeurs</h3>
+<p class="text-[11px] text-slate-500 leading-tight">Dernière relance globale : Il y a 3 jours</p>
+</div>
+<div class="text-right">
+<span class="text-2xl font-black text-[#22C55E]">78%</span>
+<p class="text-[9px] font-bold uppercase text-slate-400">Taux de réponse</p>
+</div>
+</div>
+<button class="w-full py-4 bg-[#22C55E] hover:bg-[#16a34a] text-white font-bold rounded-xl transition-all active:scale-95 shadow-lg shadow-[#22C55E]/20 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                Envoyer rappel WhatsApp
+            </button>
+</section>
+<!-- Export Actions -->
+<section class="grid grid-cols-1 gap-3 pb-8">
+<button class="w-full py-4 bg-[#E30613] text-white font-black rounded-xl uppercase text-xs tracking-widest shadow-lg shadow-[#E30613]/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+                Exporter tous les groupes (CSV)
+            </button>
+<button class="w-full py-4 bg-surface-container-lowest text-on-surface font-bold rounded-xl text-xs flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-lg text-[#E30613]" data-icon="picture_as_pdf">picture_as_pdf</span>
+                Rapport professeurs (PDF)
+            </button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 rounded-t-[24px] overflow-hidden shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Live</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Leads</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#b5000b] to-[#e30613] text-white rounded-[12px] px-5 py-2 scale-110 shadow-lg shadow-[#b5000b]/20 active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="group_work" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group_work</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Groupes</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 hover:text-white transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">RGPD</span>
+</div>
+</nav>
+</body></html>

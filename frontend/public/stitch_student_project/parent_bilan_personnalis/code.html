@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#e30613",
+                        "on-background": "#1a1a2e",
+                        "secondary-fixed": "#e7deff",
+                        "outline-variant": "#e9bcb6",
+                        "inverse-surface": "#2f2e43",
+                        "tertiary-fixed": "#ffd8e6",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#c0000c",
+                        "on-secondary-fixed-variant": "#4a3a87",
+                        "on-tertiary-fixed-variant": "#8c0058",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary-container": "#fff5f6",
+                        "on-primary-fixed": "#410001",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e8e5ff",
+                        "tertiary": "#a51d6b",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-variant": "#e2e0fc",
+                        "surface-container": "#efecff",
+                        "on-tertiary-fixed": "#3d0024",
+                        "outline": "#936e69",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#4a3b88",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#bbaaff",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "primary": "#b5000b",
+                        "on-surface-variant": "#5e3f3b",
+                        "secondary": "#6252a1",
+                        "on-secondary-fixed": "#1e055a",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#c53a84",
+                        "secondary-fixed-dim": "#cbbeff",
+                        "background": "#fcf8ff",
+                        "surface-container-highest": "#e2e0fc",
+                        "surface": "#fcf8ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#930007",
+                        "on-primary-container": "#fff5f3",
+                        "tertiary-fixed-dim": "#ffb0d0",
+                        "on-surface": "#1a1a2e",
+                        "surface-dim": "#dad7f3",
+                        "primary-fixed": "#ffdad5",
+                        "inverse-on-surface": "#f2efff",
+                        "surface-container-low": "#f5f2ff",
+                        "on-secondary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "4xl": "2rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf8ff;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="pb-32 overflow-x-hidden text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf8ff]/80 backdrop-blur-md shadow-[0_20px_40px_-15px_rgba(26,26,46,0.06)] flex justify-between items-center px-6 h-16 max-w-[480px]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="Valérie Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a mature woman with a friendly smile, soft natural lighting, elegant professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnRIurkcIBblYx2Kd0p1ftJrvos1lkuQoYYA88UZ4YT6wdMde5Mmhjt09C5GcEbu2F0XJ8JLzGEEoYbtw9AzxNz6s9jcr7PRQ64IyHyjsDhijmrEAPCiAur6tx0Eg0YkXVtvZSmViGqloOV2ZL_KU3eGfRbbYyUyQvc0DjjvyWjkrPqdfF0uLm0mizQNu1zE_iZlPdnx2d9n0GmwL1J6Z-3THxHe10_ic1UeJNYBzYEC_gQE08ww2ZZ7f8WWEiGa5SI6_ayF4BhzQ"/>
+</div>
+<span class="font-['Inter'] font-extrabold tracking-tight uppercase text-on-background text-sm">Stamp Larry</span>
+</div>
+<button class="text-primary active:scale-95 duration-200 ease-out">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Hero Section -->
+<section class="pt-24 pb-12 px-6 bg-gradient-to-br from-[#fcf8ff] via-[#f5f2ff] to-[#e2e0fc] relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-secondary font-semibold uppercase tracking-widest text-xs mb-2">Bilan du Salon</p>
+<h1 class="text-4xl font-extrabold text-on-surface leading-tight mb-6">Bonjour, <br/><span class="text-primary">Valérie</span></h1>
+<!-- Glassmorphism Stats Chips -->
+<div class="flex flex-wrap gap-3">
+<div class="glass-card px-4 py-3 rounded-2xl flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-primary text-xl">school</span>
+<div>
+<div class="text-[10px] text-secondary font-bold uppercase">Écoles</div>
+<div class="text-sm font-black">6 Visites</div>
+</div>
+</div>
+<div class="glass-card px-4 py-3 rounded-2xl flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-primary text-xl">schedule</span>
+<div>
+<div class="text-[10px] text-secondary font-bold uppercase">Temps</div>
+<div class="text-sm font-black">4h 12min</div>
+</div>
+</div>
+<div class="glass-card px-4 py-3 rounded-2xl flex items-center gap-2 border border-white/40">
+<span class="material-symbols-outlined text-primary text-xl">receipt_long</span>
+<div>
+<div class="text-[10px] text-secondary font-bold uppercase">Docs</div>
+<div class="text-sm font-black">8 Reçus</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Shape -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+</section>
+<!-- Main Content Canvas -->
+<main class="px-4 -mt-6 relative z-20 space-y-6">
+<!-- Julien's Visited Schools -->
+<section class="bg-surface-container-lowest rounded-4xl p-6 shadow-sm">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-xl font-bold text-on-surface">Le parcours de Julien</h2>
+<p class="text-on-surface-variant text-xs">Écoles visitées et temps d'échange</p>
+</div>
+<span class="text-[10px] font-mono bg-surface-container-low px-2 py-1 rounded-md text-secondary">ID: JUL-2024</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex-shrink-0 flex items-center justify-center">
+<img class="w-8 h-8 object-contain" data-alt="minimalist university logo icon on light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDliozacdYWTLcae0LtibNRAMY5UlpX8dG5q-XsXET_MIA-qs1mTQQv8-D-Likd-9KoeDLUozToT3_d-PHvC48suFyWVqOnZ5oBzbH39ds9KtolB_nev6fdUXLxSLAEygD4bSxomf5sJ3GAXGeRS7NdQYW6YZsYkmFywP3keLh7MH3vIjTZi1fLcyDuVHO0MrG7MGEwi-v1IcR6sMvPp6pnLKs0iOSkhqt8ELCijWoe_wq_c4G_EB0LqdXR-UHpL6D_L-47SR_vplw"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<h3 class="font-bold text-sm">ESCP Business School</h3>
+<span class="text-xs font-bold text-primary">45 min</span>
+</div>
+<p class="text-xs text-on-surface-variant">Intérêt : Élevé • Master Management</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex-shrink-0 flex items-center justify-center">
+<img class="w-8 h-8 object-contain" data-alt="university seal emblem with shield shape on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1CMGwZsN-aHMVS4nf421fnaVPKRPuNP05A2OfEvrqhP8owHiTlNXZ7kd0ZAURQAhRHgC4eRHpMEvU40ZwzMQnEEsLuw00h_-aGsKWgVlStaRg9YLx9E_mbbxmYiwEPn6Bnv0pJ6MtEbz0StEKi_YInbVm8qgsaYhTcMz0hqCiPLvIysvP99RQcY58QtKE9wwZx3vOKL9tACjgPy-4tho5l8k5E3WxInpGYEC0rTpAs_zir11uRKxgDZLxpjh4v0ym10powvuf6eo"/>
+</div>
+<div class="flex-grow border-t border-surface-container pt-4">
+<div class="flex justify-between">
+<h3 class="font-bold text-sm">Sciences Po Paris</h3>
+<span class="text-xs font-bold text-primary">32 min</span>
+</div>
+<p class="text-xs text-on-surface-variant">Intérêt : Moyen • Affaires Publiques</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex-shrink-0 flex items-center justify-center">
+<img class="w-8 h-8 object-contain" data-alt="modern geometric education logo with book symbol" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPqV3-vs2Sb8b3u1ifOdzeqo1sYVVF-SsZ7FTQh3uldTTsTmRKs_uJzszch2k9TTXqGlktC8w8ii0aUCNtntwwv4WdV0G11iZBlNHI1YJAH3FZ-MyRJIHJFfM4xUhh-EkkFfQ7lDA7eJeD4_Pa-S2Ov229sq1riox48cN-k0UNSXOEP7m2IRj-qdBn3VwJ2VIpWAgyWNUnU2E2oQb5JymU8KhVY1ZKufN6r_xYkV7IuIuHDoB-W337fRYZsKpBJ7Aj0mzZokkbndM"/>
+</div>
+<div class="flex-grow border-t border-surface-container pt-4">
+<div class="flex justify-between">
+<h3 class="font-bold text-sm">IPAG Business School</h3>
+<span class="text-xs font-bold text-primary">15 min</span>
+</div>
+<p class="text-xs text-on-surface-variant">Intérêt : Découverte • Commerce</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Financial Comparison Section -->
+<section>
+<h2 class="text-xl font-bold text-on-surface px-2 mb-4">Comparatif Financier</h2>
+<div class="overflow-x-auto pb-4 -mx-4 px-4 flex gap-4 no-scrollbar">
+<!-- ESCP -->
+<div class="min-w-[280px] bg-inverse-surface text-white rounded-3xl p-6 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">euro</span>
+</div>
+<h3 class="font-black text-lg mb-4">ESCP Business</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-xs opacity-80 border-b border-white/10 pb-2">
+<span>Frais de scolarité</span>
+<span class="font-mono font-bold">18 500€ /an</span>
+</div>
+<div class="flex justify-between items-center text-xs opacity-80 border-b border-white/10 pb-2">
+<span>Logement (est.)</span>
+<span class="font-mono font-bold">850€ /mois</span>
+</div>
+<div class="flex justify-between items-center text-xs opacity-80">
+<span>Bourse CROUS</span>
+<span class="bg-success text-[10px] px-2 py-0.5 rounded bg-[#22C55E]/20 text-[#22C55E] font-bold">Éligible</span>
+</div>
+</div>
+</div>
+<!-- Sciences Po -->
+<div class="min-w-[280px] bg-surface-container-high rounded-3xl p-6 shadow-sm border border-outline-variant/20">
+<h3 class="font-black text-lg text-on-surface mb-4">Sciences Po</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-xs text-on-surface-variant border-b border-on-surface/5 pb-2">
+<span>Frais de scolarité</span>
+<span class="font-mono font-bold text-on-surface">14 200€ /an</span>
+</div>
+<div class="flex justify-between items-center text-xs text-on-surface-variant border-b border-on-surface/5 pb-2">
+<span>Logement (est.)</span>
+<span class="font-mono font-bold text-on-surface">900€ /mois</span>
+</div>
+<div class="flex justify-between items-center text-xs text-on-surface-variant">
+<span>Bourse CROUS</span>
+<span class="bg-[#22C55E]/20 text-[#22C55E] text-[10px] px-2 py-0.5 rounded font-bold">Éligible</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Conference Digest -->
+<section class="bg-tertiary-fixed/30 rounded-3xl p-6 border border-tertiary-fixed-dim/20">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">mic</span>
+<h2 class="text-xl font-bold text-on-tertiary-fixed">Digest Conférences</h2>
+</div>
+<div class="space-y-4">
+<div class="bg-white/60 p-4 rounded-2xl">
+<h4 class="text-sm font-bold mb-1">"Parcoursup : Les clés de la réussite"</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Focus sur la rédaction de la lettre de motivation et l'importance des activités extra-scolaires.</p>
+</div>
+<div class="bg-white/60 p-4 rounded-2xl">
+<h4 class="text-sm font-bold mb-1">"Financement &amp; Bourses 2024"</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Nouvelles modalités pour l'aide au logement étudiant et plafonds CROUS.</p>
+</div>
+</div>
+</section>
+<!-- Next Steps Action Cards -->
+<section class="space-y-3">
+<h2 class="text-xl font-bold text-on-surface px-2 mb-1">Prochaines étapes</h2>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/10 shadow-sm active:scale-[0.98] transition-transform">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold">Finaliser Parcoursup</h4>
+<p class="text-[11px] text-on-surface-variant">Échéance dans 12 jours</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/10 shadow-sm active:scale-[0.98] transition-transform">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">account_balance</span>
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold">Dossier Social Étudiant (CROUS)</h4>
+<p class="text-[11px] text-on-surface-variant">Ouvrir le dossier de demande</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant/10 shadow-sm active:scale-[0.98] transition-transform">
+<div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#F97316]">event_available</span>
+</div>
+<div class="flex-grow">
+<h4 class="text-sm font-bold">Journées Portes Ouvertes</h4>
+<p class="text-[11px] text-on-surface-variant">3 dates réservées en Février</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</div>
+</section>
+<!-- Share Buttons -->
+<section class="pt-4 flex gap-4">
+<button class="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 rounded-2xl font-bold text-sm shadow-lg shadow-green-500/20 active:scale-95 transition-all">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.492l-.999 3.647 3.794-.996zm11.369-7.327c-.273-.137-1.617-.798-1.871-.891-.253-.093-.437-.139-.621.139-.184.277-.712.891-.873 1.077-.161.186-.322.21-.595.074-.273-.137-1.152-.424-2.193-1.355-.809-.721-1.355-1.612-1.514-1.886-.159-.273-.017-.421.12-.557.123-.122.273-.319.41-.479.136-.16.182-.273.273-.456.091-.182.046-.341-.023-.479s-.621-1.498-.851-2.049c-.224-.539-.451-.465-.621-.473-.16-.008-.344-.009-.528-.009-.184 0-.482.069-.735.344-.253.277-.965.944-.965 2.304s.988 2.669 1.126 2.852c.138.183 1.944 2.969 4.708 4.16.658.283 1.171.452 1.57.579.66.21 1.26.18 1.733.11.528-.078 1.617-.661 1.847-1.3s.23-1.187.161-1.302c-.069-.115-.253-.183-.526-.32z"></path></svg>
+                Partager
+            </button>
+<button class="flex-1 flex items-center justify-center gap-2 bg-inverse-surface text-white py-4 rounded-2xl font-bold text-sm shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">mail</span>
+                Email
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#fcf8ff]/90 backdrop-blur-xl flex justify-around items-center px-4 pb-6 pt-3 max-w-[480px]">
+<div class="flex flex-col items-center justify-center text-[#2f2e43] px-4 py-2 opacity-60">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Explorer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] px-4 py-2 opacity-60">
+<span class="material-symbols-outlined">school</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Orientation</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#2f2e43] px-4 py-2 opacity-60">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Favoris</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl px-5 py-2 shadow-lg shadow-[#e30613]/20">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] font-semibold text-[10px] tracking-wide uppercase mt-1">Compte</span>
+</div>
+</nav>
+<!-- Subtle gradient wash -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-30">
+<div class="absolute top-1/4 -left-1/4 w-[500px] h-[500px] bg-[#FFF0F5] rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] bg-[#e7deff] rounded-full blur-[120px]"></div>
+</div>
+</body></html>

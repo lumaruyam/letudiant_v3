@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#f2efff",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2f2e43",
+                    "outline-variant": "#e9bcb6",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#410001",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1a2e",
+                    "primary-container": "#e30613",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "tertiary-container": "#c53a84",
+                    "primary-fixed": "#ffdad5",
+                    "surface-tint": "#c0000c",
+                    "on-surface-variant": "#5e3f3b",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary": "#a51d6b",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "surface-dim": "#dad7f3",
+                    "surface-container": "#efecff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#930007",
+                    "on-primary-container": "#fff5f3",
+                    "on-background": "#1a1a2e",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-container": "#bbaaff",
+                    "surface-container-low": "#f5f2ff",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-secondary-fixed": "#1e055a",
+                    "error-container": "#ffdad6",
+                    "outline": "#936e69",
+                    "background": "#fcf8ff",
+                    "secondary": "#6252a1",
+                    "on-secondary-container": "#4a3b88",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e0fc",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#b5000b",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "tertiary-fixed": "#ffd8e6",
+                    "surface": "#fcf8ff",
+                    "on-tertiary-container": "#fff5f6",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-bright": "#fcf8ff",
+                    "on-tertiary-fixed": "#3d0024"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "display": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32 max-w-[640px] mx-auto">
+<!-- TopAppBar -->
+<header class="bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_10px_40px_rgba(0,0,0,0.3)] flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white" data-icon="grid_view">grid_view</span>
+<h1 class="font-['Inter'] font-extrabold tracking-tighter text-white uppercase text-lg">L'ÉTUDIANT ADMIN</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-[#22C55E]/20 text-[#22C55E] px-3 py-1 rounded-full text-[10px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                🔒 CNIL CONFORME
+            </div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-white/10">
+<img alt="Sophie Profile" data-alt="Close-up portrait of a professional woman with glasses and dark hair, soft office lighting, high-end corporate photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDG2XaqTWswkt_wkNfjcvPPFbwqnd0r9ttRe-U1Qo6TSWTPpqBOIHO76frkPoyOC7S70_nR2BzSoQCvtEZsxQVngxmNulpFWaRih8CBxilGI3pVH9a9gHggYmyeHCrTXHExoWaotV2pfh96olUkfxQae1GZEJi1Kh8zyd_DGafDK23deomLXQVQl66QEirt_E-OLSVip1pT-XrCURGY8HPw1TrAolnz_laZABlZZMNTZotiIo3JUUa7TsYQQ7cGGRx0DR-qxW8kaM"/>
+</div>
+</div>
+</header>
+<main class="px-5 pt-6 space-y-8">
+<!-- Dashboard Header -->
+<section>
+<div class="flex items-end justify-between mb-4">
+<h2 class="text-3xl font-black italic tracking-tighter text-inverse-surface">CONSOLE RGPD</h2>
+<p class="text-[10px] font-mono text-outline uppercase tracking-widest pb-1">Session: Sophie / Data Mgr</p>
+</div>
+<!-- Consent Rate Asymmetric Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Large Card -->
+<div class="col-span-2 bg-inverse-surface rounded-xl p-6 relative overflow-hidden shadow-xl">
+<div class="absolute -right-4 -top-4 opacity-10">
+<span class="material-symbols-outlined text-9xl text-white" data-icon="analytics">analytics</span>
+</div>
+<p class="text-secondary-fixed-dim text-xs font-bold tracking-widest uppercase mb-1">Opt-in L'Étudiant</p>
+<div class="flex items-baseline gap-2">
+<span class="text-white text-6xl font-black">68%</span>
+<span class="text-success-green text-[#22C55E] flex items-center text-sm font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span> +4.2%
+                        </span>
+</div>
+<div class="mt-4 flex gap-2">
+<div class="h-1.5 flex-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[68%]"></div>
+</div>
+</div>
+</div>
+<!-- Small Card Commercial -->
+<div class="bg-[#fff7ed] rounded-xl p-5 shadow-sm">
+<p class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider mb-2">Commerciaux</p>
+<span class="text-3xl font-black text-on-surface">31%</span>
+<p class="text-[9px] text-outline mt-1 font-medium leading-tight">Partenaires tiers &amp; newsletters</p>
+</div>
+<!-- Small Card Telephone -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm border border-outline-variant/10">
+<p class="text-on-surface-variant text-[10px] font-bold uppercase tracking-wider mb-2">Téléphone</p>
+<span class="text-3xl font-black text-on-surface">12%</span>
+<p class="text-[9px] text-outline mt-1 font-medium leading-tight">Consentement appels directs</p>
+</div>
+</div>
+<!-- Insight Box -->
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl flex gap-3 items-center">
+<div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<span class="font-bold text-on-surface">Insight :</span> L'engagement mobile a augmenté les opt-ins de <span class="text-primary font-bold">12%</span> depuis la mise à jour des bannières de cookies.
+                </p>
+</div>
+</section>
+<!-- Pending Data Requests -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-xl tracking-tight text-inverse-surface">Demandes en attente</h3>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-0.5 rounded font-black uppercase">Urgent</span>
+</div>
+<!-- Tab Selector -->
+<div class="flex bg-surface-container-high rounded-full p-1 mb-4">
+<button class="flex-1 py-2 px-4 rounded-full text-xs font-bold bg-white shadow-sm text-primary">Portabilité (3)</button>
+<button class="flex-1 py-2 px-4 rounded-full text-xs font-bold text-outline">Suppression (1)</button>
+</div>
+<!-- List Portabilité -->
+<div class="space-y-3">
+<div class="bg-white p-4 rounded-xl flex items-center justify-between group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+</div>
+<div>
+<p class="text-sm font-black text-on-surface">U-2891</p>
+<p class="text-[10px] text-outline">Reçue il y a 2h • JSON/PDF</p>
+</div>
+</div>
+<button class="bg-primary px-4 py-2 rounded-lg text-white text-[10px] font-bold uppercase tracking-widest active:scale-95 transition-transform">Traiter</button>
+</div>
+<div class="bg-white p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="download">download</span>
+</div>
+<div>
+<p class="text-sm font-black text-on-surface">U-3041</p>
+<p class="text-[10px] text-outline">Reçue il y a 5h • Archivage</p>
+</div>
+</div>
+<button class="bg-secondary px-4 py-2 rounded-lg text-white text-[10px] font-bold uppercase tracking-widest">Traiter</button>
+</div>
+<!-- Suppression Urgent Card -->
+<div class="bg-error-container p-4 rounded-xl flex items-center gap-4 border-l-4 border-error">
+<span class="material-symbols-outlined text-error" data-icon="delete_forever" style="font-variation-settings: 'FILL' 1;">delete_forever</span>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-sm font-black text-on-error-container">SUPPRESSION U-2745</p>
+<span class="text-[9px] font-bold text-error uppercase">Priorité 1</span>
+</div>
+<p class="text-[10px] text-on-error-container/70 mt-0.5">Droit à l'oubli invoqué. Délai légal: 48h restantes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Age Verification Status -->
+<section>
+<div class="bg-gradient-to-br from-secondary to-on-secondary-container p-6 rounded-xl relative overflow-hidden shadow-lg">
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="bg-white/20 backdrop-blur p-2 rounded-lg">
+<span class="material-symbols-outlined text-white" data-icon="family_history">family_history</span>
+</div>
+<span class="bg-white text-secondary text-[10px] px-2 py-1 rounded font-black">VÉRIFICATION</span>
+</div>
+<h4 class="text-white text-4xl font-black mb-1">47</h4>
+<p class="text-secondary-fixed text-xs font-medium leading-snug max-w-[180px]">Profils en attente de consentement parental (Minorité)</p>
+</div>
+<!-- Decorative Circle -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+</div>
+</section>
+<!-- Data Retention Timeline -->
+<section>
+<h3 class="font-bold text-xl tracking-tight text-inverse-surface mb-4">Rétention des données</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+<div class="w-2 h-12 bg-error rounded-full"></div>
+<div class="flex-1">
+<p class="text-sm font-black text-on-surface">89 profils</p>
+<p class="text-[11px] text-outline">Suppression automatique dans <span class="text-error font-bold">7 jours</span></p>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 bg-white p-4 rounded-xl">
+<div class="w-2 h-12 bg-Match Orange bg-[#F97316] rounded-full"></div>
+<div class="flex-1">
+<p class="text-sm font-black text-on-surface">346 profils</p>
+<p class="text-[11px] text-outline">Suppression automatique dans <span class="text-[#F97316] font-bold">30 jours</span></p>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Audit Log -->
+<section class="pb-12">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-xl tracking-tight text-inverse-surface">Journal d'audit</h3>
+<button class="text-primary text-[11px] font-bold uppercase tracking-widest">Voir tout</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden">
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></span>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Export CSV de la base "Leads-Salons"</p>
+<p class="text-[10px] text-outline mt-0.5">Aujourd'hui, 14:23 • Sophie M.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5"></span>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Suppression manuelle U-2900</p>
+<p class="text-[10px] text-outline mt-0.5">Aujourd'hui, 11:15 • Automate System</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5"></span>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Mise à jour Politique de Confidentialité</p>
+<p class="text-[10px] text-outline mt-0.5">Hier, 17:45 • Admin Root</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5"></span>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Audit CNIL hebdomadaire</p>
+<p class="text-[10px] text-outline mt-0.5">Hier, 09:00 • Compliance Bot</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant mt-1.5"></span>
+<div class="flex-1">
+<p class="text-xs font-bold text-on-surface">Demande de portabilité U-3040 clôturée</p>
+<p class="text-[10px] text-outline mt-0.5">02 Juil, 16:30 • Sophie M.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-[#1A1A2E]/90 dark:bg-[#1A1A2E]/95 backdrop-blur-xl docked full-width bottom-0 fixed rounded-t-[24px] overflow-hidden shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-2xl" data-icon="sensors">sensors</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Live</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-2xl" data-icon="person_search">person_search</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Leads</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 p-2 opacity-70 transition-all active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-2xl" data-icon="group_work">group_work</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-1">Groupes</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-gradient-to-tr from-[#b5000b] to-[#e30613] text-white rounded-[12px] px-5 py-2 scale-110 shadow-lg shadow-[#b5000b]/20 active:scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined text-2xl" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-['Inter'] font-semibold text-[11px] tracking-wide mt-0.5">RGPD</span>
+</div>
+</nav>
+</body></html>

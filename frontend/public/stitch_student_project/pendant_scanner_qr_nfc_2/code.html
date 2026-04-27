@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#410001",
+                        "on-surface": "#1a1a2e",
+                        "on-primary-container": "#fff5f3",
+                        "on-tertiary-container": "#fff5f6",
+                        "tertiary-fixed": "#ffd8e6",
+                        "on-secondary-fixed": "#1e055a",
+                        "secondary": "#6252a1",
+                        "on-tertiary-fixed-variant": "#8c0058",
+                        "on-background": "#1a1a2e",
+                        "inverse-on-surface": "#f2efff",
+                        "background": "#fcf8ff",
+                        "inverse-surface": "#2f2e43",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#bbaaff",
+                        "tertiary": "#a51d6b",
+                        "surface-variant": "#e2e0fc",
+                        "tertiary-container": "#c53a84",
+                        "surface-container-highest": "#e2e0fc",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#cbbeff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e5ff",
+                        "on-tertiary-fixed": "#3d0024",
+                        "surface-container-low": "#f5f2ff",
+                        "surface-container": "#efecff",
+                        "surface-dim": "#dad7f3",
+                        "surface": "#fcf8ff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#e9bcb6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a3a87",
+                        "surface-bright": "#fcf8ff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#930007",
+                        "primary-fixed": "#ffdad5",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "secondary-fixed": "#e7deff",
+                        "tertiary-fixed-dim": "#ffb0d0",
+                        "outline": "#936e69",
+                        "on-surface-variant": "#5e3f3b",
+                        "on-secondary-container": "#4a3b88",
+                        "primary-container": "#e30613",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-tint": "#c0000c",
+                        "primary": "#b5000b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #e30613, transparent);
+            animation: scan 2s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .nfc-ring {
+            border: 2px solid #bbaaff;
+            animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .petal {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.15;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-on-surface font-body text-on-surface min-h-screen overflow-hidden">
+<!-- Top AppBar - Following JSON Structure -->
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#fcf8ff]/80 dark:bg-[#1a1a2e]/80 backdrop-blur-xl border-t-4 border-[#e30613] shadow-[0_20px_40px_rgba(26,26,46,0.04)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2f2e43] dark:text-[#e2e0fc] hover:opacity-80 transition-opacity cursor-pointer" data-icon="arrow_back" onclick="alert('← pendant_tableau_de_bord_2')">arrow_back</span>
+<h1 class="font-['Inter'] font-extrabold uppercase tracking-tighter text-xl font-black text-[#1a1a2e] dark:text-white after:content-[''] after:block after:h-1 after:w-full after:bg-[#e30613]">l'Étudiant</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#2f2e43] dark:text-[#e2e0fc] hover:opacity-80 transition-opacity" data-icon="notifications">notifications</span>
+</div>
+</header>
+<!-- Scanner Viewport -->
+<main class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+<!-- Decorative Sakura Petals (Subtle Overlays) -->
+<div class="absolute inset-0 z-10 pointer-events-none">
+<img class="petal top-10 left-10 w-8 rotate-45" data-alt="close up of a single pink cherry blossom petal with soft lighting and delicate texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuX_0I_DiMdn5BViljOwk-gExlqzD6AU5Fr3mp22W9sZKyA0wK4DPMaU-LL2zCl2foxfvtXKU_lFpKY_G9H-ok7jicf55UyFilf7j6OamXvmBLBocromZd2_earPW9jadaLnNoznm7MJQy98-fLulv-5iE6unbQOd9ejiCHTvMuvdbc4qh994_-wI2cgZST2vdSrWVh-Gp04PQxZEdBUqarqDvaKh6Tydij7xL9V3p1N1ToFJP-Hdaxwov3tFcjOFdsP5f7XnDcME"/>
+<img class="petal bottom-40 right-20 w-6 -rotate-12" data-alt="soft focus pink sakura blossom petal falling gracefully with a translucent effect" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIsN2NHWGImOxc4FTjy53AeQq1cTYtV1rPgdx678YLG_tSW6NZal3eICHupcMhwWZiALIWz0mHJNG-Psst33DvgpAtc2iTrdaRW5y_eJKz9xjqHb4N4ypWmQ_CIZZ5Q7w19bWqlrOb63rliLNEOie9IKHu8k_O3AM6c2Jg0SSzaZhIRRhAhNBvZLg8RDF-63A_DPqR26h3CMLSzqrSHVg2TQfiltJtMtY12dYCGzjU98iWVS7cLVxE-BQ1DUcLA2NGxW9bTHvx4uA"/>
+<img class="petal top-1/4 right-1/3 w-10 rotate-90" data-alt="delicate cherry blossom petal in soft pink tones against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7miPzqgg01gE_5dxXsnlourn60BkEtsBXG4-MCVt4Xf6PByUjv1j0ceM_3svnvGZMO6i7kX1URWkSzwTqAnLQn_c0fmCk9W4ELZsWi0raUF31s8kZxq_HqigwowA0zqAW4Z6GPHNoxIt6XLdlv-jekXA9839SLFjLug2a0kKQjLUgFvzM0vuBeE-lH6WAqHIx5VxXYmdLVb6OUeKZ7Wxw-lN75R0S5NoLQ8b2_2DKER8OMxAukIEn9hrLTDnozaBCoURy5kCz4_o"/>
+</div>
+<!-- Camera View Overlay -->
+<div class="absolute inset-0 bg-black opacity-40"></div>
+<!-- Scan Zone -->
+<div class="relative z-20 w-[260px] h-[260px]">
+<!-- Corner Brackets -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-white rounded-tl-xl"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-white rounded-tr-xl"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-white rounded-bl-xl"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-white rounded-br-xl"></div>
+<!-- Pulsing Scan Line -->
+<div class="scan-line absolute left-2 right-2 z-30"></div>
+<!-- Scanner Helper Text -->
+<p class="absolute -top-12 left-0 w-full text-center text-white/80 font-medium text-sm tracking-wide">Place le code dans le cadre</p>
+</div>
+<!-- Mock Scan Action Button (Bento Style Floating) -->
+<div class="absolute bottom-48 z-40 flex justify-center w-full">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-bold shadow-2xl flex items-center gap-3 active:scale-95 transition-transform duration-200" onclick="alert('→ pendant_lettre_d_bloqu_e')">
+<span class="text-xl">🎯</span>
+                Simuler un scan
+            </button>
+</div>
+<!-- Bottom Panel - NFC Interaction -->
+<section class="fixed bottom-0 left-0 w-full z-50 px-4 pb-28">
+<div class="bg-surface-container-low/60 backdrop-blur-2xl rounded-t-[32px] p-8 border-t border-white/20 shadow-2xl flex flex-col items-center">
+<div class="relative mb-6 h-20 w-20 flex items-center justify-center">
+<div class="nfc-ring absolute rounded-full h-12 w-12 border-2 border-secondary-container"></div>
+<div class="nfc-ring absolute rounded-full h-12 w-12 border-2 border-secondary-container" style="animation-delay: 0.5s"></div>
+<div class="nfc-ring absolute rounded-full h-12 w-12 border-2 border-secondary-container" style="animation-delay: 1s"></div>
+<span class="material-symbols-outlined text-4xl text-secondary-container relative z-10" data-icon="nfc">nfc</span>
+</div>
+<h2 class="text-on-surface font-headline font-bold text-lg text-center leading-tight">
+                    Ou approche ton téléphone du tag NFC
+                </h2>
+<p class="text-on-surface-variant/70 text-sm text-center mt-2 font-medium">Compatible avec toutes les bornes l'Étudiant</p>
+</div>
+</section>
+</main>
+<!-- BottomNavBar - Mapping active state to "Scanner" -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around pb-6 px-4 bg-[#fcf8ff]/85 dark:bg-[#1a1a2e]/85 backdrop-blur-md rounded-t-[24px] shadow-[0_-10px_30px_rgba(26,26,46,0.06)] items-center"><!-- Home -->
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Home</span>
+</div>
+<!-- Ma Carte -->
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Ma Carte</span>
+</div>
+<!-- Scanner (ACTIVE) -->
+<div class="flex flex-col items-center justify-center bg-[#E30613] text-white rounded-full w-16 h-16 -mt-10 shadow-xl border-4 border-white dark:border-[#1a1a2e] active:scale-90 transition-transform duration-300 ease-out cursor-pointer">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner" style="font-variation-settings: 'FILL' 1;">qr_code_scanner</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Scanner</span>
+</div>
+<!-- Classement -->
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Classement</span>
+</div>
+<!-- Profil -->
+<div class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Profil</span>
+</div></nav>
+</body></html>

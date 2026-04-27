@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#410001",
+                    "on-surface": "#1a1a2e",
+                    "on-primary-container": "#fff5f3",
+                    "on-tertiary-container": "#fff5f6",
+                    "tertiary-fixed": "#ffd8e6",
+                    "on-secondary-fixed": "#1e055a",
+                    "secondary": "#6252a1",
+                    "on-tertiary-fixed-variant": "#8c0058",
+                    "on-background": "#1a1a2e",
+                    "inverse-on-surface": "#f2efff",
+                    "background": "#fcf8ff",
+                    "inverse-surface": "#2f2e43",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#bbaaff",
+                    "tertiary": "#a51d6b",
+                    "surface-variant": "#e2e0fc",
+                    "tertiary-container": "#c53a84",
+                    "surface-container-highest": "#e2e0fc",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#cbbeff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e8e5ff",
+                    "on-tertiary-fixed": "#3d0024",
+                    "surface-container-low": "#f5f2ff",
+                    "surface-container": "#efecff",
+                    "surface-dim": "#dad7f3",
+                    "surface": "#fcf8ff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#e9bcb6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#4a3a87",
+                    "surface-bright": "#fcf8ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930007",
+                    "primary-fixed": "#ffdad5",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "secondary-fixed": "#e7deff",
+                    "tertiary-fixed-dim": "#ffb0d0",
+                    "outline": "#936e69",
+                    "on-surface-variant": "#5e3f3b",
+                    "on-secondary-container": "#4a3b88",
+                    "primary-container": "#e30613",
+                    "inverse-primary": "#ffb4aa",
+                    "surface-tint": "#c0000c",
+                    "primary": "#b5000b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "mono": ["Courier New"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#fcf8ff]/80 dark:bg-[#1a1a2e]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.04)] border-t-4 border-[#e30613]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2f2e43] cursor-pointer hover:opacity-80 transition-opacity">menu</span>
+<h1 class="font-['Inter'] font-extrabold uppercase tracking-tighter text-xl font-black text-[#1a1a2e] dark:text-white after:content-[''] after:block after:h-1 after:w-full after:bg-[#e30613]">l'Étudiant</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#2f2e43] cursor-pointer hover:opacity-80 transition-opacity">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Hero Section Asymmetric -->
+<section class="relative mb-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7 z-10">
+<span class="inline-block px-4 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold mb-4 tracking-wider uppercase">Session Terminée</span>
+<h2 class="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-4 text-on-surface">
+                        Ton bilan du <span class="text-primary italic">Salon de Bordeaux 2026</span>
+</h2>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                        Bravo ! Tu as franchi une étape clé dans ton orientation. Retrouve ici l'analyse de ton parcours et nos conseils personnalisés.
+                    </p>
+</div>
+<div class="md:col-span-5 relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<img class="rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 w-full object-cover h-64" data-alt="cheerful university students discussing enthusiastically in a modern campus courtyard with bright natural sunlight and bokeh greenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc7koKeHG7W9ORn61WnGQJI8_GCMOsWPWzeNSpKxXPE1Yj5e7CDrxhjL16LUtKLKdgWvVHyEaZJaYLkz0LvdUueQE1PR-CJRxG_4J1I9wmRjAZ8UJXzsUrhso29_yNogp_lBeoYgDB6DgycHUaGoNzpSMp4lz4ZQUZveM4Tm6fa5XRMqJaGgqLHspBnxZdR2z6bhchR_g217GZzv_3kku3sDdlR8aFHYof5Xi2ts3qNuh61MyZs4rf9LWVi-n98c0jamLCQ4PmIjA"/>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">storefront</span>
+<span class="text-3xl font-black text-on-surface">4</span>
+<span class="text-xs font-bold uppercase text-on-surface-variant tracking-widest">Stands</span>
+</div>
+<div class="bg-inverse-surface p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary-container mb-2 text-3xl">podcasts</span>
+<span class="text-3xl font-black text-white">1</span>
+<span class="text-xs font-bold uppercase text-surface-variant tracking-widest">Conférence</span>
+</div>
+<div class="bg-primary p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-white mb-2 text-3xl">schedule</span>
+<span class="text-3xl font-black text-white">3h30</span>
+<span class="text-xs font-bold uppercase text-white/80 tracking-widest">Temps</span>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-secondary mb-2 text-3xl">bookmark</span>
+<span class="text-3xl font-black text-on-surface">12</span>
+<span class="text-xs font-bold uppercase text-on-surface-variant tracking-widest">Docs PDF</span>
+</div>
+</section>
+<!-- Recommendations & Logic Box -->
+<section class="mb-12">
+<div class="flex items-end justify-between mb-8">
+<div>
+<h3 class="text-2xl font-extrabold text-on-surface">Tes Matchs Idéaux</h3>
+<p class="text-on-surface-variant">Basé sur tes visites et tes intérêts déclarés.</p>
+</div>
+<div class="hidden md:block">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 font-mono text-[10px] text-on-surface-variant">
+<p class="mb-1 uppercase font-bold opacity-50">Match Engine v2.4</p>
+<code>score = (visits * 0.4) + (interests * 0.6)</code>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-card p-6 rounded-3xl border border-white flex flex-col h-full hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-11 h-11 bg-white rounded-[12px] p-2 flex items-center justify-center shrink-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD78dlUkwN0hyOAe6N655zIOagWWo7n1z3UeFLCkLG5JPRYUdgd_4XvVU9wOO9JcYmEVvkIzcVDhpwsSgGoYgy2U8HecL_KqRm6538DjdWGh0NAC9HHJzHGSPqoADgHBk_CiPORqVZCxVU92jROVQdUbmJo3n_5Bq53d3uR-Hiugn3-dEAwUE3xSfflyY4wQvjzQyTLlsomLEPF7EfY9w0zuDMpD2Z05_b2JtkiY40VjU6l4wGU9p1NQ1T3hLWSLvgn1INVt7DZMo8" style="width:100%;height:100%;object-fit:contain;"/></div>
+<span class="px-3 py-1 bg-[#F97316] text-white text-[10px] font-black rounded-full uppercase tracking-tighter">98% Match</span>
+</div>
+<h4 class="text-xl font-bold mb-2">EM Lyon</h4>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">Business School &amp; Management. Idéal pour ton profil "Entrepreneur".</p>
+<button class="w-full py-3 bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">Consulter le Guide</button>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-6 rounded-3xl border border-white flex flex-col h-full hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-11 h-11 bg-white rounded-[12px] p-2 flex items-center justify-center shrink-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgKmRmiB7OtW_iAKuEaje4H5Ae4lPR17d4CwHnPbDp6p9ZJ4k62E7K_DSpB_OwWxybtKtIu2j_mOjEi3WvbHKcTYa3xslRPhaXwurRDY5lYTyReiIq9NDIZb5SqH03Wx8XHoiguYQQVwQ2T4UM5j_mqNGNigIAHwmVGAnZYt-xsXAGmdw_EHdd7ekF52ditPIpEDWHaY6emCHEy7ZgmLoSaJr7zSSsoHtCIzCiJSGbS_eBYe50DL6ry3o0herrG3Vz-_XyYz7AIG0" style="width:100%;height:100%;object-fit:contain;"/></div>
+<span class="px-3 py-1 bg-[#F97316] text-white text-[10px] font-black rounded-full uppercase tracking-tighter">92% Match</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Paris Dauphine</h4>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">Excellence académique en économie et gestion d'entreprise.</p>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">Consulter le Guide</button>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-6 rounded-3xl border border-white flex flex-col h-full hover:shadow-xl transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div class="w-11 h-11 bg-white rounded-[12px] p-2 flex items-center justify-center shrink-0"><div class="bg-[#009245] text-white text-[9px] font-bold px-1 rounded-full w-full h-4 flex items-center justify-center uppercase">SKEMA</div></div>
+<span class="px-3 py-1 bg-[#F97316] text-white text-[10px] font-black rounded-full uppercase tracking-tighter">85% Match</span>
+</div>
+<h4 class="text-xl font-bold mb-2">SKEMA</h4>
+<p class="text-sm text-on-surface-variant mb-6 flex-grow">Global BBA et programmes internationaux de haut niveau.</p>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">Consulter le Guide</button>
+</div>
+</div>
+</section>
+<!-- Next Steps -->
+<section class="mb-12 bg-inverse-surface rounded-[2rem] p-8 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/20 to-transparent"></div>
+<h3 class="text-2xl font-black mb-8 relative z-10">Prochaines Étapes</h3>
+<div class="space-y-4 relative z-10">
+<div class="flex items-center gap-6 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="w-12 h-12 bg-error rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">priority_high</span>
+</div>
+<div class="flex-grow">
+<h5 class="font-bold">Deadline Parcoursup</h5>
+<p class="text-sm text-surface-variant">Pense à valider tes vœux avant le 14 Mars.</p>
+</div>
+<span class="material-symbols-outlined opacity-50">chevron_right</span>
+</div>
+<div class="flex items-center gap-6 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">meeting_room</span>
+</div>
+<div class="flex-grow">
+<h5 class="font-bold">Journées Portes Ouvertes</h5>
+<p class="text-sm text-surface-variant">EM Lyon organise sa JPO le samedi 22 Février.</p>
+</div>
+<span class="material-symbols-outlined opacity-50">chevron_right</span>
+</div>
+<div class="flex items-center gap-6 p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">payments</span>
+</div>
+<div class="flex-grow">
+<h5 class="font-bold">Dossier de Bourses</h5>
+<p class="text-sm text-surface-variant">Simule tes droits pour l'année prochaine.</p>
+</div>
+<span class="material-symbols-outlined opacity-50">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Survey & Download -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<div class="bg-surface-container-low p-8 rounded-3xl">
+<h4 class="text-xl font-bold mb-4">Ton expérience au salon ?</h4>
+<div class="flex justify-between gap-2">
+<button class="w-12 h-12 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all">😡</button>
+<button class="w-12 h-12 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all">🙁</button>
+<button class="w-12 h-12 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all">😐</button>
+<button class="w-12 h-12 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all">😊</button>
+<button class="w-12 h-12 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all transform hover:scale-125">🤩</button>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<button class="group flex items-center gap-4 px-8 py-6 bg-surface-container-lowest rounded-3xl shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">download</span>
+<div class="text-left">
+<p class="text-xs font-bold uppercase text-on-surface-variant tracking-widest">Format PDF</p>
+<span class="text-lg font-black text-on-surface">Télécharger mon résumé</span>
+</div>
+</button>
+</div>
+</section><section class="mx-4 mb-12 bg-[linear-gradient(135deg,#1A1A2E,#2D1B69)] p-6 rounded-[28px]">
+<div class="mb-6">
+<h4 class="text-white text-base font-bold italic uppercase mb-1">Montre à tes parents ce que tu as trouvé</h4>
+<p class="text-white/60 text-[11px]">Un résumé de ta shortlist, prêt à partager ce soir</p>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 h-12 bg-[#25D366] text-white rounded-[14px] flex items-center justify-center gap-2 text-xs font-bold">
+<span class="material-symbols-outlined text-lg">chat</span>
+      Envoyer via WhatsApp
+    </button>
+<button class="flex-1 h-12 bg-white/10 text-white rounded-[14px] flex items-center justify-center gap-2 text-xs font-bold hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-lg">mail</span>
+      Par email
+    </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-end pb-6 px-4 bg-[#fcf8ff]/85 dark:bg-[#1a1a2e]/85 backdrop-blur-md shadow-[0_-10px_30px_rgba(26,26,46,0.06)] rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Ma Carte</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl p-3 -mt-6 shadow-lg shadow-[#b5000b]/20 active:scale-90 transition-transform duration-300 ease-out" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Classement</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Profil</span>
+</a>
+</nav>
+</body></html>

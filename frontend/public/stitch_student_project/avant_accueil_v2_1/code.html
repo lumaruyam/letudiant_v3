@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>l'Étudiant - Onboarding Landing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">function updateCTA(type) {
+                const cta = document.getElementById('main-cta');
+                const buttons = document.querySelectorAll('.segment-btn');
+                
+                // Reset all buttons
+                buttons.forEach(btn => {
+                    btn.classList.remove('bg-[#E30613]', 'text-white');
+                    btn.classList.add('bg-secondary-fixed', 'text-[#4a3b88]');
+                });
+
+                // Apply selected style, text and routing alert
+                if (type === 'solo') {
+                    document.getElementById('btn-solo').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-solo').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Créer mon passeport 🌸 →";
+                    cta.setAttribute('onclick', "alert('→ inscription_rgpd')");
+                } else if (type === 'group') {
+                    document.getElementById('btn-group').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-group').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Rejoindre mon groupe →";
+                    cta.setAttribute('onclick', "alert('→ groupe_scolaire_onboarding_lucas')");
+                } else if (type === 'parent') {
+                    document.getElementById('btn-parent').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-parent').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Créer mon espace parent →";
+                    cta.setAttribute('onclick', "alert('→ parent_accueil_inscription')");
+                }
+            }</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#410001",
+                        "on-surface": "#1a1a2e",
+                        "on-primary-container": "#fff5f3",
+                        "on-tertiary-container": "#fff5f6",
+                        "tertiary-fixed": "#ffd8e6",
+                        "on-secondary-fixed": "#1e055a",
+                        "secondary": "#6252a1",
+                        "on-tertiary-fixed-variant": "#8c0058",
+                        "on-background": "#1a1a2e",
+                        "inverse-on-surface": "#f2efff",
+                        "background": "#fcf8ff",
+                        "inverse-surface": "#2f2e43",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#bbaaff",
+                        "tertiary": "#a51d6b",
+                        "surface-variant": "#e2e0fc",
+                        "tertiary-container": "#c53a84",
+                        "surface-container-highest": "#e2e0fc",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#cbbeff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e5ff",
+                        "on-tertiary-fixed": "#3d0024",
+                        "surface-container-low": "#f5f2ff",
+                        "surface-container": "#efecff",
+                        "surface-dim": "#dad7f3",
+                        "surface": "#fcf8ff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#e9bcb6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#4a3a87",
+                        "surface-bright": "#fcf8ff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#930007",
+                        "primary-fixed": "#ffdad5",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "secondary-fixed": "#e7deff",
+                        "tertiary-fixed-dim": "#ffb0d0",
+                        "outline": "#936e69",
+                        "on-surface-variant": "#5e3f3b",
+                        "on-secondary-container": "#4a3b88",
+                        "primary-container": "#e30613",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-tint": "#c0000c",
+                        "primary": "#b5000b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sakura-petal {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ffd8e6;
+            border-radius: 50% 0 50% 50%;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full fixed top-0 z-50 bg-[#fcf8ff]/80 dark:bg-[#1a1a2e]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(26,26,46,0.04)] border-t-4 border-[#e30613]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#2f2e43] dark:text-[#e2e0fc] transition-opacity hover:opacity-80" data-icon="menu">menu</span>
+<div class="font-['Inter'] font-extrabold uppercase tracking-tighter text-xl font-black text-[#1a1a2e] dark:text-white relative">
+            l'Étudiant
+            <div class="absolute -bottom-1 left-0 h-1 w-full bg-[#e30613]"></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#2f2e43] dark:text-[#e2e0fc] transition-opacity hover:opacity-80" data-icon="notifications">notifications</span>
+</div>
+</header>
+<main class="pt-20 pb-12">
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex flex-col items-center justify-center text-center px-6 overflow-hidden bg-gradient-to-br from-inverse-surface via-[#1a1a2e] to-[#4a3a87] text-white">
+<!-- Floating Sakura Petals -->
+<div class="sakura-petal top-1/4 left-[10%] rotate-45"></div>
+<div class="sakura-petal top-1/3 right-[15%] rotate-12 scale-125"></div>
+<div class="sakura-petal bottom-1/4 left-1/4 -rotate-45 opacity-40"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-fixed text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-sm border border-primary/30">
+                Prochain Salon
+            </span>
+<h1 class="font-headline text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tighter uppercase italic">
+                Ton Futur <br/><span class="text-primary-container">Commence Ici</span>
+</h1>
+<!-- Countdown Timer -->
+<div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mb-12">
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+<div class="text-3xl font-black text-white">04</div>
+<div class="text-[10px] uppercase tracking-widest text-surface-variant font-bold">Jours</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+<div class="text-3xl font-black text-white">18</div>
+<div class="text-[10px] uppercase tracking-widest text-surface-variant font-bold">Heures</div>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+<div class="text-3xl font-black text-white">42</div>
+<div class="text-[10px] uppercase tracking-widest text-surface-variant font-bold">Minutes</div>
+</div>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-5 py-2 rounded-full font-bold text-sm shadow-lg shadow-black/20">130 salons / an</span>
+<span class="bg-primary text-white px-5 py-2 rounded-full font-bold text-sm shadow-lg shadow-primary/20">+1M visiteurs</span>
+<span class="bg-white/10 text-white border border-white/20 backdrop-blur-sm px-5 py-2 rounded-full font-bold text-sm">360 exposants</span>
+</div>
+</div>
+<!-- Background Image Integration -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="" class="w-full h-full object-cover" data-alt="Modern university campus building at dusk with cinematic lighting and soft pink cherry blossom trees in the foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvI1uYrLPbrc8J7yZaTnVexVxErEnrMM4UGMRDDaaaTS9vfOo_7us5MC4saUc_8cGCZHnjYxia1wZEdfzxi7T7G2C3ozAl-ZNEPvr1xZmlOeGzJAWhFtxxZpmW3i5vs9s-KIxbKXZA2_0YEktdrNs9aFCiaYoJg_eEQmgpQ_0fbSMGFQ_5pF1U5Yll4A0kn8iuVooGORUd2UgHVTFxKdmdQwASl_LDwrTeZtgx87PH0EM7s8F2oetsd_AItOepeqYaV9tR7fcY1Y4"/>
+</div>
+</section>
+<!-- Teaser & Passport -->
+<section class="max-w-4xl mx-auto -mt-16 relative z-20 px-6">
+<div class="bg-surface-container-lowest rounded-[32px] p-8 shadow-[0_40px_80px_rgba(26,26,46,0.08)] border border-outline-variant/10">
+<div class="text-center mb-10">
+<h2 class="text-xl font-bold uppercase tracking-widest text-primary mb-4 italic">Jeu de piste numérique</h2>
+<p class="text-on-surface-variant mb-6 font-semibold">Complète le mot ÉTUDIANT en scannant les stands</p>
+<div class="flex justify-center gap-2">
+<!-- Slots for ETUDIANT -->
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">E</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">T</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">U</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">D</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">I</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">A</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">N</div>
+<div class="w-10 h-14 border-2 border-dashed border-outline-variant rounded-xl flex items-center justify-center font-black text-xl text-primary/30">T</div>
+</div>
+</div>
+<!-- Blossom QR Passport -->
+<div class="relative flex flex-col items-center py-10 px-6 bg-surface-container-low rounded-[24px] overflow-hidden group">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
+<div class="w-48 h-48 bg-white p-4 rounded-[2rem] shadow-2xl relative z-10 border border-primary/10">
+<img alt="Passeport QR" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANC3gUaahj4p-RZ2ylQFTLmvvgh_sYLuCTDrqwDrYcbo4SsqwwrqEY7HBRzedxSCmFdyk0NYX8doQEvwcJjNR1Htp6kOVfZBVi3HpJVmseJyGlJQ2KBtxZzptrxF_Udxn7szHeyBPMMKuWfeoXRgiU0XcL3jwEb17e61LYwUVn1d6yrKjs87DsCOpBrTak24m6PmYOEBB0hET49fklQScZsAmVGAe_yUFMT1XO9DfM3a_m0iOv8bvGwSpsq8qlFl_HQEvBSvbbCQ0"/>
+<div class="absolute -top-3 -right-3 bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+<span class="material-symbols-outlined text-sm" data-icon="flower">local_florist</span>
+</div>
+</div>
+<div class="mt-8 text-center relative z-10">
+<p class="font-headline font-black text-2xl text-on-surface uppercase italic">Ton Passeport Digital</p>
+<p class="text-sm text-on-surface-variant font-medium mt-1">Prêt pour l'aventure</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How it works -->
+<section class="py-20 px-6 max-w-6xl mx-auto">
+<h3 class="text-3xl font-black italic uppercase tracking-tighter text-on-surface mb-12 flex items-center gap-4">
+            Le Concept <div class="h-1 flex-1 bg-surface-container-high rounded-full"></div>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-[32px] hover:translate-y-[-8px] transition-transform duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<h4 class="text-xl font-black italic mb-3">Scanne</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Passe ton passeport sur les bornes des exposants pour valider tes étapes.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-inverse-surface text-white p-8 rounded-[32px] hover:translate-y-[-8px] transition-transform duration-300 shadow-xl shadow-indigo-900/10">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-container text-3xl" data-icon="lock_open">lock_open</span>
+</div>
+<h4 class="text-xl font-black italic mb-3">Débloque</h4>
+<p class="text-surface-variant text-sm leading-relaxed">Récupère des bonus exclusifs et complète ton profil de compétences.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-[32px] hover:translate-y-[-8px] transition-transform duration-300">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="stars">stars</span>
+</div>
+<h4 class="text-xl font-black italic mb-3">Deviens CEO</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Monte dans le classement et tente de gagner des dotations premium.</p>
+</div>
+</div>
+</section>
+<!-- Suggested Schools -->
+<section class="bg-surface-container-low py-20">
+<div class="max-w-6xl mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h3 class="text-3xl font-black italic uppercase tracking-tighter text-on-surface">Écoles Partenaires</h3>
+<p class="text-on-surface-variant font-medium mt-2">Déjà prêtes à t'accueillir sur le salon</p>
+</div>
+<button class="text-primary font-bold text-sm hover:underline flex items-center gap-2">
+                    Voir tout <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- School 1 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm group">
+<div class="h-40 overflow-hidden">
+<img alt="ESSEC Campus" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A prestigious modern business school campus with grand glass architecture and students sitting on green lawns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3pQx8bDVCPW9Q6toH4yuvF_Yz0tiyVwp7Hfvwx1n1OoZWX6WJ2MtqdT3mj2JuBtwlQdjYazi2X8IQWaouEffAdWxkY_cFCqL6Hj4ohbD5TskrRt4LWkdFZOGnU5aGNBeMy3LKof_WLKGit5eiWh9nty75N7mLDyv4KYp6lLM-cFK2WJw_BObSNHYNwzzC5mTEwOW0HVOLQfVwCRSmoYYBA3HiIK-8YUQ7-o8OqNSB18tSTK3ip2r4c2D9j0vAeZtZxYxOp4c-sV8"/>
+</div>
+<div class="p-6">
+<span class="bg-secondary-fixed text-[10px] uppercase font-black px-3 py-1 rounded-full mb-3 inline-block">Business &amp; Finance</span>
+<h5 class="text-xl font-black italic">ESSEC</h5>
+<p class="text-xs text-on-surface-variant mt-2">Stand B-12 • Pavillon 7</p>
+</div>
+</div>
+<!-- School 2 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm group">
+<div class="h-40 overflow-hidden">
+<img alt="Sciences Po" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Historical Parisian university building with classical stone facade and large wooden doors during autumn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn-eCEwTN0FdZpZ9pWa0vQ1jNAwWUIZnV93rIIC5qxxb6Ayf2tI9pAlA0rMCisWjNjuI1AvT1DF7pholIjSkcKgQ274BNmQLA_j9_emi5bT6aQPVi4miAjNrT8muWZykPFAfiXQ7Bm4wWV3FSex2PQEhI_WTcsqxy-iutPM6GSGEQ8WJflOfJPgeFQdSmzmHtDZjOfYyLnn8ozQDBY0zwtbUMrsVZChCX3ZQbdK4jB9DmAHafpCMITkRM8D36Ied63EOxYpudDXvA"/>
+</div>
+<div class="p-6">
+<span class="bg-tertiary-fixed text-[10px] uppercase font-black px-3 py-1 rounded-full mb-3 inline-block">Sciences Politiques</span>
+<h5 class="text-xl font-black italic">Sciences Po</h5>
+<p class="text-xs text-on-surface-variant mt-2">Stand A-05 • Pavillon 1</p>
+</div>
+</div>
+<!-- School 3 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm group">
+<div class="h-40 overflow-hidden">
+<img alt="IAE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bright modern interior of a management school library with students collaborating at sleek tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhrk8AE_fgrzMMOVbohtTN6wzpy6uQXhQjOttnrCZ1wt9o7SbM5cdEh2NAKlXL0qCV6bpSBeTwiuRbDB3WIYfDQTvNtmBbw78XfvyTsB1qDCFxT2uhz2HkJRV5sf4jV2tipa-rt8j3NvoSiTdQX_P5AmXt1Pcox8VC5Ppcc1Cwe_b3OWfspHig20QHonZHxkHyQzfGZa2MCylLJ0DD-3LnwNuEnID6VMyvYmGdXHpetIrBpvBDxIbGvt9hkqzfVOAxaes6TeHlTt8"/>
+</div>
+<div class="p-6">
+<span class="bg-primary-fixed text-[10px] uppercase font-black px-3 py-1 rounded-full mb-3 inline-block">Management</span>
+<h5 class="text-xl font-black italic">IAE</h5>
+<p class="text-xs text-on-surface-variant mt-2">Stand C-44 • Pavillon 4</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6 text-center max-w-2xl mx-auto">
+<div class="mb-8">
+<p class="text-on-surface-variant font-black uppercase text-xs tracking-widest mb-4">Comment viens-tu au salon ?</p>
+<div class="flex flex-wrap justify-center gap-2" id="segmentation-container">
+<button class="segment-btn px-4 py-2 rounded-full text-sm font-bold transition-all bg-[#E30613] text-white" id="btn-solo" onclick="updateCTA('solo')">
+                    Seul(e)
+                </button>
+<button class="segment-btn px-4 py-2 rounded-full text-sm font-bold transition-all bg-secondary-fixed text-[#4a3b88]" id="btn-group" onclick="updateCTA('group')">
+                    En groupe scolaire
+                </button>
+<button class="segment-btn px-4 py-2 rounded-full text-sm font-bold transition-all bg-secondary-fixed text-[#4a3b88]" id="btn-parent" onclick="updateCTA('parent')">
+                    Je suis parent
+                </button>
+</div>
+</div>
+<button class="w-full py-6 rounded-2xl bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white font-black italic text-xl shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all mb-8" id="main-cta" onclick="alert('→ inscription_rgpd')">Créer mon passeport 🌸 →</button><div class="bg-[#f5f2ff] py-3 px-4 rounded-xl mb-8 flex justify-center items-center gap-2 text-[10px] tracking-widest font-black">
+<span class="text-[#E30613]">AVANT ●</span>
+<span class="text-[#CCCCCC]">──</span>
+<span class="text-[#CCCCCC]">PENDANT</span>
+<span class="text-[#CCCCCC]">──</span>
+<span class="text-[#CCCCCC]">APRÈS</span>
+</div>
+<script>function updateCTA(type) {
+                const cta = document.getElementById('main-cta');
+                const buttons = document.querySelectorAll('.segment-btn');
+                
+                // Reset all buttons
+                buttons.forEach(btn => {
+                    btn.classList.remove('bg-[#E30613]', 'text-white');
+                    btn.classList.add('bg-secondary-fixed', 'text-[#4a3b88]');
+                });
+
+                // Apply selected style, text and routing alert
+                if (type === 'solo') {
+                    document.getElementById('btn-solo').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-solo').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Créer mon passeport 🌸 →";
+                    cta.setAttribute('onclick', "alert('→ inscription_rgpd')");
+                } else if (type === 'group') {
+                    document.getElementById('btn-group').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-group').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Rejoindre mon groupe →";
+                    cta.setAttribute('onclick', "alert('→ groupe_scolaire_onboarding_lucas')");
+                } else if (type === 'parent') {
+                    document.getElementById('btn-parent').classList.add('bg-[#E30613]', 'text-white');
+                    document.getElementById('btn-parent').classList.remove('bg-secondary-fixed', 'text-[#4a3b88]');
+                    cta.innerText = "Créer mon espace parent →";
+                    cta.setAttribute('onclick', "alert('→ parent_accueil_inscription')");
+                }
+            }</script>
+<!-- Data Annotation Collapsible -->
+<details class="group bg-surface-container-low rounded-2xl border border-outline-variant/10">
+<summary class="flex items-center justify-between p-5 cursor-pointer list-none font-bold text-sm text-on-surface-variant">
+                Quelles données utilisons-nous ?
+                <span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-5 pt-0 text-left text-xs text-on-surface-variant/80 border-t border-outline-variant/5">
+<p class="mb-2 italic">Pour ton expérience personnalisée :</p>
+<ul class="space-y-2 list-disc list-inside">
+<li>Prénom &amp; Nom</li>
+<li>Adresse email</li>
+<li>Niveau d'études actuel</li>
+<li>Centres d'intérêt (IA, Management, Arts, etc.)</li>
+</ul>
+<p class="mt-4 font-semibold text-success">Conforme RGPD • Hébergement Sécurisé</p>
+</div>
+</details>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-end pb-6 px-4 md:hidden bg-[#fcf8ff]/85 dark:bg-[#1a1a2e]/85 backdrop-blur-md shadow-[0_-10px_30px_rgba(26,26,46,0.06)] rounded-t-[24px]">
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#b5000b] to-[#e30613] text-white rounded-2xl p-3 -mt-6 shadow-lg shadow-[#b5000b]/20 transition-transform active:scale-90 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Ma Carte</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Scanner</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Classement</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#2f2e43] dark:text-[#e2e0fc] opacity-60 p-2 hover:bg-[#f5f2ff] dark:hover:bg-[#2f2e43] rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[10px] font-bold tracking-wide">Profil</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stamp Larry - Groupe Scolaire</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e30613",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#8c0058",
+                        "on-secondary-fixed": "#1e055a",
+                        "surface-container-high": "#e8e5ff",
+                        "tertiary-container": "#c53a84",
+                        "secondary-fixed-dim": "#cbbeff",
+                        "surface-variant": "#e2e0fc",
+                        "secondary": "#6252a1",
+                        "on-secondary-container": "#4a3b88",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb0d0",
+                        "primary-fixed": "#ffdad5",
+                        "secondary-container": "#bbaaff",
+                        "surface-container": "#efecff",
+                        "on-surface-variant": "#5e3f3b",
+                        "secondary-fixed": "#e7deff",
+                        "inverse-primary": "#ffb4aa",
+                        "background": "#fcf8ff",
+                        "surface-dim": "#dad7f3",
+                        "surface-container-highest": "#e2e0fc",
+                        "surface-bright": "#fcf8ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#936e69",
+                        "on-tertiary-container": "#fff5f6",
+                        "surface-tint": "#c0000c",
+                        "on-primary-fixed": "#410001",
+                        "on-tertiary-fixed": "#3d0024",
+                        "surface": "#fcf8ff",
+                        "outline-variant": "#e9bcb6",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#fff5f3",
+                        "surface-container-low": "#f5f2ff",
+                        "primary": "#b5000b",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-primary-fixed-variant": "#930007",
+                        "on-background": "#1a1a2e",
+                        "tertiary": "#a51d6b",
+                        "on-surface": "#1a1a2e",
+                        "tertiary-fixed": "#ffd8e6",
+                        "inverse-surface": "#2f2e43",
+                        "on-secondary-fixed-variant": "#4a3a87",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f2efff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "4xl": "2rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "mono": ["Courier New"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .sakura-bg {
+            background: linear-gradient(135deg, #1A1A2E 0%, #2D1B69 100%);
+        }
+        /* Hidden screens logic */
+        #professeur-screen { display: none; }
+        #eleve-screen { display: block; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen max-w-[480px] mx-auto overflow-x-hidden relative shadow-2xl">
+<!-- TOP ROLE SELECTOR -->
+<div class="bg-surface-container-low pt-2 px-4 sticky top-0 z-[60]">
+<div class="flex gap-2 w-full">
+<button class="flex-1 h-9 rounded-full bg-primary-container text-white font-bold text-[13px] transition-all duration-200" onclick="document.getElementById('eleve-screen').style.display='block'; document.getElementById('professeur-screen').style.display='none'; this.classList.add('bg-primary-container', 'text-white', 'font-bold'); this.classList.remove('text-secondary'); document.getElementById('btn-prof').classList.remove('bg-primary-container', 'text-white', 'font-bold'); document.getElementById('btn-prof').classList.add('text-secondary');">Élève</button>
+<button class="flex-1 h-9 rounded-full bg-transparent text-secondary text-[13px] transition-all duration-200" id="btn-prof" onclick="document.getElementById('eleve-screen').style.display='none'; document.getElementById('professeur-screen').style.display='block'; this.classList.add('bg-primary-container', 'text-white', 'font-bold'); this.classList.remove('text-secondary'); document.previousElementSibling.classList.remove('bg-primary-container', 'text-white', 'font-bold'); document.previousElementSibling.classList.add('text-secondary');">Professeur</button>
+</div>
+<div class="h-[2px] w-full bg-outline-variant opacity-20 mt-2"></div>
+</div>
+<!-- HEADER -->
+<header class="sticky top-[52px] bg-surface/85 backdrop-blur-xl z-50">
+<div class="h-1 bg-primary-container w-full"></div>
+<div class="px-6 py-4 flex justify-between items-center">
+<div class="font-headline font-black text-xl tracking-tighter uppercase text-on-surface">
+                L'<span class="text-primary-container">É</span>TUDIANT
+            </div>
+<div class="bg-[#FFF0F5] text-primary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tight">
+                Lycée Victor Hugo · Lyon
+            </div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="pb-32">
+<!-- ELEVE MODE -->
+<section id="eleve-screen">
+<!-- HERO -->
+<div class="sakura-bg relative overflow-hidden px-5 py-10 pb-16">
+<!-- Static Petals -->
+<div class="absolute inset-0 pointer-events-none opacity-15 overflow-hidden">
+<svg class="absolute top-10 left-10 w-6 h-6 text-[#FFB7C5] fill-current" viewbox="0 0 24 24"><path d="M12,2C12,2 4,10 4,16C4,19.31 6.69,22 10,22C11.13,22 12.19,21.68 13.08,21.14C12.41,20.21 12,19.06 12,17.82C12,14.6 14.61,12 17.82,12C19.06,12 20.21,12.41 21.14,13.08C21.68,12.19 22,11.13 22,10C22,6.69 19.31,4 16,4C10,4 12,2 12,2Z"></path></svg>
+<svg class="absolute top-24 right-12 w-4 h-4 text-[#FF69B4] fill-current" viewbox="0 0 24 24"><path d="M12,2C12,2 4,10 4,16C4,19.31 6.69,22 10,22C11.13,22 12.19,21.68 13.08,21.14C12.41,20.21 12,19.06 12,17.82C12,14.6 14.61,12 17.82,12C19.06,12 20.21,12.41 21.14,13.08C21.68,12.19 22,11.13 22,10C22,6.69 19.31,4 16,4C10,4 12,2 12,2Z"></path></svg>
+<svg class="absolute bottom-12 left-24 w-5 h-5 text-[#FFB7C5] fill-current" viewbox="0 0 24 24"><path d="M12,2C12,2 4,10 4,16C4,19.31 6.69,22 10,22C11.13,22 12.19,21.68 13.08,21.14C12.41,20.21 12,19.06 12,17.82C12,14.6 14.61,12 17.82,12C19.06,12 20.21,12.41 21.14,13.08C21.68,12.19 22,11.13 22,10C22,6.69 19.31,4 16,4C10,4 12,2 12,2Z"></path></svg>
+<svg class="absolute bottom-4 right-4 w-7 h-7 text-[#FF69B4] fill-current" viewbox="0 0 24 24"><path d="M12,2C12,2 4,10 4,16C4,19.31 6.69,22 10,22C11.13,22 12.19,21.68 13.08,21.14C12.41,20.21 12,19.06 12,17.82C12,14.6 14.61,12 17.82,12C19.06,12 20.21,12.41 21.14,13.08C21.68,12.19 22,11.13 22,10C22,6.69 19.31,4 16,4C10,4 12,2 12,2Z"></path></svg>
+</div>
+<div class="relative z-10">
+<h1 class="text-2xl font-headline font-extrabold italic uppercase tracking-tighter text-white mb-6">Rejoins ton groupe 🌸</h1>
+<!-- Glass Status Card -->
+<div class="custom-glass p-4 rounded-2xl border border-white/15">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-white text-xl">school</span>
+<span class="text-white font-bold text-sm">Lycée Victor Hugo, Lyon</span>
+</div>
+<div class="flex items-center gap-3 opacity-70 mb-4">
+<span class="material-symbols-outlined text-white text-[16px]">person</span>
+<span class="text-white text-xs">Mme Dupont — Première B</span>
+</div>
+<div class="flex justify-between items-end mb-2">
+<span class="text-[11px] text-white/80 font-medium">14 / 24 élèves ont rejoint</span>
+<span class="text-[11px] text-white/70">58%</span>
+</div>
+<div class="w-full h-2 bg-white/20 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 58%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- JOIN FORM -->
+<div class="relative z-20 mx-4 -mt-5 bg-surface-container-lowest rounded-[32px] p-7 shadow-[0_40px_80px_rgba(26,26,46,0.08)]">
+<div class="mb-6">
+<h2 class="text-lg font-headline font-extrabold italic uppercase tracking-tight text-on-surface">Rejoins en 10 secondes</h2>
+<p class="text-[11px] text-slate-500">Aucun mot de passe requis</p>
+</div>
+<form class="space-y-6" onsubmit="return false">
+<!-- Name Input -->
+<div class="group relative bg-surface-container-low rounded-2xl p-2 transition-all focus-within:bg-white focus-within:shadow-[inset_0_0_0_2px_rgba(227,6,19,0.12)]">
+<label class="block text-[10px] uppercase font-bold text-primary-container ml-2 mt-1">Ton prénom</label>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-semibold py-1 px-2 h-8 text-[15px]" placeholder="Lucas" type="text"/>
+</div>
+<!-- Interest Grid -->
+<div>
+<h3 class="text-[13px] font-bold text-on-surface mb-3">Qu'est-ce qui t'intéresse ?</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="h-[60px] rounded-2xl bg-primary-container text-white flex flex-col items-center justify-center scale-[1.03] transition-all">
+<span class="text-2xl mb-0.5">💻</span>
+<span class="text-[10px] font-bold uppercase">Numérique</span>
+</button>
+<button class="h-[60px] rounded-2xl bg-surface-container-low text-on-surface flex flex-col items-center justify-center hover:bg-surface-variant transition-all">
+<span class="text-2xl mb-0.5">💼</span>
+<span class="text-[10px] font-bold uppercase">Commerce</span>
+</button>
+<button class="h-[60px] rounded-2xl bg-surface-container-low text-on-surface flex flex-col items-center justify-center hover:bg-surface-variant transition-all">
+<span class="text-2xl mb-0.5">🎨</span>
+<span class="text-[10px] font-bold uppercase">Design</span>
+</button>
+<button class="h-[60px] rounded-2xl bg-surface-container-low text-on-surface flex flex-col items-center justify-center hover:bg-surface-variant transition-all">
+<span class="text-2xl mb-0.5">🔬</span>
+<span class="text-[10px] font-bold uppercase">Sciences</span>
+</button>
+</div>
+</div>
+<!-- NFC Toggle -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">nfc</span>
+<span class="text-[13px] font-bold">J'ai un téléphone NFC</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-container text-[11px] p-3 rounded-2xl leading-tight">
+                            Approche ton téléphone de la borne à l'entrée — ton bracelet sera activé automatiquement 📡
+                        </div>
+</div>
+<!-- GDPR -->
+<div class="bg-[#FFF0F5] p-3 rounded-xl flex gap-3 items-start">
+<span class="material-symbols-outlined text-[#22C55E] text-[14px] mt-0.5">shield</span>
+<p class="text-[10px] text-on-surface-variant">Données: prénom + intérêt + groupe uniquement. Suppression auto. 12 mois.</p>
+</div>
+<!-- Submit -->
+<button class="w-full h-[52px] bg-gradient-to-br from-primary to-primary-container text-white font-headline font-extrabold text-[15px] rounded-2xl shadow-[0_8px_24px_rgba(227,6,19,0.25)] active:scale-[0.98] transition-all">
+                        Rejoindre le groupe 🌸
+                    </button>
+<p class="text-center">
+<a class="text-[12px] text-secondary underline" href="#">Je préfère m'inscrire complètement →</a>
+</p>
+</form>
+</div>
+<!-- LEADERBOARD TEASER -->
+<section class="mt-8 bg-surface-container-low px-5 py-8">
+<h2 class="text-sm font-bold uppercase italic tracking-widest text-on-surface mb-5 flex items-center gap-2">
+                    🏆 Classement de ta classe
+                </h2>
+<div class="space-y-0.5">
+<div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm border-l-4 border-primary-container">
+<div class="flex items-center gap-3">
+<span class="text-xl">🥇</span>
+<span class="text-sm font-bold">Lucas G. (Toi)</span>
+<span class="bg-secondary-fixed text-on-secondary-container text-[9px] font-bold px-2 py-0.5 rounded-full">💻 NUMÉRIQUE</span>
+</div>
+<span class="text-[11px] font-medium text-slate-500">3 stands</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-transparent">
+<div class="flex items-center gap-3">
+<span class="text-xl">🥈</span>
+<span class="text-sm font-semibold">Emma R.</span>
+<span class="bg-surface-variant text-on-surface text-[9px] font-bold px-2 py-0.5 rounded-full">🎨 DESIGN</span>
+</div>
+<span class="text-[11px] text-slate-400">1 stand</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-white/40">
+<div class="flex items-center gap-3">
+<span class="text-xl">🥉</span>
+<span class="text-sm font-semibold text-slate-700">Théo M.</span>
+<span class="bg-surface-variant text-on-surface text-[9px] font-bold px-2 py-0.5 rounded-full">💼 COMMERCE</span>
+</div>
+<span class="text-[11px] text-slate-400">1 stand</span>
+</div>
+</div>
+<button class="mt-4 text-[11px] font-bold text-secondary uppercase tracking-wider block mx-auto underline">
+                    ...et 21 autres élèves
+                </button>
+</section>
+</section>
+<!-- PROFESSEUR MODE (HIDDEN) -->
+<section id="professeur-screen">
+<!-- Hero Overlay Card style -->
+<div class="mx-4 -mt-5 pt-8 bg-surface-container-lowest rounded-[32px] p-7 shadow-[0_40px_80px_rgba(26,26,46,0.08)] relative z-20">
+<h2 class="text-base font-headline font-extrabold italic uppercase tracking-tight text-on-surface">Partagez ce lien avec votre classe</h2>
+<p class="text-[12px] text-slate-500 mt-1 mb-4">Chaque élève rejoindra avec son prénom en 10 secondes</p>
+<div class="bg-surface-container-low rounded-xl p-4 font-mono text-[13px] text-[#2D1B69] break-all text-center mb-6">
+                    stamp-larry.letudiant.fr/groupe/VH-B-2026
+                </div>
+<div class="flex gap-3 mb-6">
+<button class="flex-1 h-11 bg-primary-container text-white text-[13px] font-bold rounded-xl active:scale-95 transition-all">
+                        Copier le lien
+                    </button>
+<button class="flex-1 h-11 bg-surface-container-low text-primary-container text-[13px] font-bold rounded-xl active:scale-95 transition-all" onclick="document.getElementById('qr-modal').classList.toggle('hidden')">
+                        Afficher QR
+                    </button>
+</div>
+<!-- Hidden QR Modal effect -->
+<div class="hidden py-6 flex flex-col items-center" id="qr-modal">
+<div class="w-[160px] h-[160px] rounded-3xl p-4 bg-[radial-gradient(circle,#FFF0F5,#FFB7C5)] flex flex-col items-center justify-center relative shadow-lg">
+<span class="text-4xl">🌸</span>
+<div class="absolute inset-0 p-2 pointer-events-none opacity-40">
+<!-- QR Corner petals mock -->
+<span class="absolute top-0 left-0 text-xs">🌸</span>
+<span class="absolute top-0 right-0 text-xs">🌸</span>
+<span class="absolute bottom-0 left-0 text-xs">🌸</span>
+<span class="absolute bottom-0 right-0 text-xs">🌸</span>
+</div>
+</div>
+<p class="mt-3 text-[11px] font-bold text-primary-container uppercase tracking-widest">Scanne-moi 🌸</p>
+</div>
+</div>
+<!-- Group Stats Professor -->
+<div class="mx-4 mt-6 bg-on-background rounded-[24px] p-6 text-white shadow-xl">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-bold">14 / 24 élèves connectés</h3>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold px-3 py-1 rounded-full uppercase">5 NFC activés</span>
+</div>
+<div class="w-full h-2 bg-white/15 rounded-full overflow-hidden mb-6">
+<div class="bg-primary-container h-full rounded-full" style="width: 58%"></div>
+</div>
+<div class="space-y-4 max-h-[220px] overflow-y-auto pr-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium">Lucas G.</span>
+<span class="text-[14px]">💻</span>
+<span class="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.5 rounded font-bold">NFC ✅</span>
+</div>
+<span class="text-[11px] text-white/50">3 stands</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium">Emma R.</span>
+<span class="text-[14px]">🎨</span>
+</div>
+<span class="text-[11px] text-white/50">1 stand</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium">Théo M.</span>
+<span class="text-[14px]">💼</span>
+</div>
+<span class="text-[11px] text-white/50">1 stand</span>
+</div>
+<div class="flex items-center justify-between opacity-50">
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium">Marie L.</span>
+<span class="text-[14px]">🔬</span>
+</div>
+<span class="text-[11px]">0 stand</span>
+</div>
+</div>
+<button class="w-full mt-6 text-primary-container text-[13px] font-bold border-t border-white/5 pt-4">
+                    Voir les 24 élèves →
+                </button>
+</div>
+<!-- Export Actions -->
+<div class="flex gap-3 px-4 mt-6">
+<button class="flex-1 h-11 border border-primary-container/30 text-primary-container text-[12px] font-bold rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">upload</span>
+                    Exporter la liste
+                </button>
+<button class="flex-1 h-11 border border-primary-container/30 text-primary-container text-[12px] font-bold rounded-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">mail</span>
+                    Envoyer rapport
+                </button>
+</div>
+</section>
+<!-- FOOTER INFO -->
+<div class="mt-12 px-6 pb-12 text-center">
+<p class="text-[11px] text-slate-400 max-w-[240px] mx-auto leading-relaxed">
+                Vous êtes enseignant ? Basculez sur l'onglet Professeur ci-dessus.
+            </p>
+</div>
+</main>
+</body></html>
