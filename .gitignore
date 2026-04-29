@@ -30,8 +30,7 @@ __pycache__/
 *.tsbuildinfo
 
 # Local databases / generated data
-backend/app/db/local.db
-backend/app/db/*.db
-backend/app/db/*.sqlite
-backend/app/db/*.sqlite3
-data/*.csv
+# backend/app/db/local.db
+# backend/app/db/*.db
+# backend/app/db/*.sqlite
+# backend/app/db/*.sqlite3

@@ -3,6 +3,15 @@ import { useEffect, useMemo, useState } from "react";
 
 import { AdminLayout } from "@/components/admin-layout";
 import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
   getKpis,
   getLeads,
   type FairKpisResponse,
@@ -10,6 +19,7 @@ import {
 } from "@/lib/api";
 import { conferences, stands } from "@/lib/data";
 import { setErrorFlag, setLoadingFlag, useAppState } from "@/lib/state";
+import { ChevronDown } from "lucide-react";
 
 function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
@@ -23,6 +33,66 @@ const eurFmt = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EU
 const scoreFmt = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 1 });
 type SectorFilter = "Tech" | "Business" | "Art" | "Santé"
 type TabType = "stands" | "conferences" | "emergents"
+
+function LeadSearchPicker({
+  leads,
+  value,
+  onValueChange,
+  label,
+}: {
+  leads: LeadListItem[];
+  value: number | null;
+  onValueChange: (id: number) => void;
+  label: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const selectedLead = leads.find((lead) => lead.student_id === value) ?? null;
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          className="w-full rounded-lg px-3 py-2 text-left text-sm transition-all hover:opacity-95"
+          style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "none" }}
+        >
+          <span className="mb-1 block text-xs uppercase tracking-[0.14em] opacity-70">{label}</span>
+          <span className="flex items-center justify-between gap-3">
+            <span className={selectedLead ? "truncate" : "opacity-70"}>
+              {selectedLead ? `${selectedLead.full_name} (Tier ${selectedLead.tier_eur}EUR)` : "Rechercher un étudiant..."}
+            </span>
+            <ChevronDown className="h-4 w-4 shrink-0 opacity-70" />
+          </span>
+        </button>
+      </PopoverTrigger>
+      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
+        <Command>
+          <CommandInput placeholder="Tapez un nom d'étudiant..." />
+          <CommandList>
+            <CommandEmpty>Aucun lead trouvé.</CommandEmpty>
+            <CommandGroup>
+              {leads.map((lead) => (
+                <CommandItem
+                  key={lead.student_id}
+                  value={lead.full_name}
+                  onSelect={() => {
+                    onValueChange(lead.student_id);
+                    setOpen(false);
+                  }}
+                >
+                  <div className="flex w-full items-center justify-between gap-3">
+                    <span className="truncate">{lead.full_name}</span>
+                    <span className="text-xs text-muted-foreground">Tier {lead.tier_eur}EUR</span>
+                  </div>
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
 
 function ScenarioTester({ leads, loading }: { leads: LeadListItem[]; loading: boolean }) {
   const [leadAId, setLeadAId] = useState<number | null>(null);
@@ -48,35 +118,21 @@ function ScenarioTester({ leads, loading }: { leads: LeadListItem[]; loading: bo
       {!loading && leads.length > 0 && leadA && leadB && (
         <div className="space-y-3">
           <div>
-            <label className="text-xs opacity-70 block mb-1">COMPARER LEAD A</label>
-            <select
+            <LeadSearchPicker
+              leads={leads}
               value={leadA.student_id}
-              onChange={(e) => setLeadAId(Number(e.target.value))}
-              className="w-full px-3 py-2 rounded-lg text-sm"
-              style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "none" }}
-            >
-              {leads.map((lead) => (
-                <option key={lead.student_id} value={lead.student_id} style={{ color: "var(--foreground)" }}>
-                  {lead.full_name} (Tier {lead.tier_eur}EUR)
-                </option>
-              ))}
-            </select>
+              onValueChange={setLeadAId}
+              label="COMPARER LEAD A"
+            />
           </div>
 
           <div>
-            <label className="text-xs opacity-70 block mb-1">CONTRE LEAD B</label>
-            <select
+            <LeadSearchPicker
+              leads={leads}
               value={leadB.student_id}
-              onChange={(e) => setLeadBId(Number(e.target.value))}
-              className="w-full px-3 py-2 rounded-lg text-sm"
-              style={{ background: "rgba(255,255,255,0.15)", color: "white", border: "none" }}
-            >
-              {leads.map((lead) => (
-                <option key={lead.student_id} value={lead.student_id} style={{ color: "var(--foreground)" }}>
-                  {lead.full_name} (Tier {lead.tier_eur}EUR)
-                </option>
-              ))}
-            </select>
+              onValueChange={setLeadBId}
+              label="CONTRE LEAD B"
+            />
           </div>
 
           <div className="flex gap-4 pt-4">
@@ -165,7 +221,7 @@ function DashboardPage() {
     const stages = ["Register", "Before Event", "During Event", "After Event"];
     const totalValue = fairKpis?.total_monetisable_value_eur ?? 0;
     const finalScore = averageStudentScore;
-  
+
     return stages.map((stage, index) => {
       const progress = (index + 1) / stages.length; // 0.25, 0.5, 0.75, 1.0
       // Start at 30% of final score, increase linearly to 100% at last stage
