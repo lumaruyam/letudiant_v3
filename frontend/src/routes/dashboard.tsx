@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 
 import { AdminLayout } from "@/components/admin-layout";
@@ -95,6 +95,7 @@ function LeadSearchPicker({
 }
 
 function ScenarioTester({ leads, loading }: { leads: LeadListItem[]; loading: boolean }) {
+  const navigate = useNavigate();
   const [leadAId, setLeadAId] = useState<number | null>(null);
   const [leadBId, setLeadBId] = useState<number | null>(null);
 
@@ -146,7 +147,11 @@ function ScenarioTester({ leads, loading }: { leads: LeadListItem[]; loading: bo
             </div>
           </div>
 
-          <button className="w-full py-3 rounded-xl text-sm font-medium transition-all hover:opacity-90" style={{ background: "white", color: "var(--primary)" }}>
+          <button
+            className="w-full py-3 rounded-xl text-sm font-medium transition-all hover:opacity-90"
+            style={{ background: "white", color: "var(--primary)" }}
+            onClick={() => navigate({ to: "/leads/comparison" })}
+          >
             Comparer les Profils
           </button>
         </div>
@@ -288,6 +293,16 @@ function DashboardPage() {
           <div>
             <h3 className="text-lg font-semibold mb-1" style={{ color: "var(--foreground)" }}>Chronologie de la Valorisation des Donnees</h3>
             <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>Impact des etapes du cycle de vie sur le score et la valeur marchande.</p>
+          </div>
+          <div className="flex items-center gap-4 pt-1">
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full" style={{ background: "var(--primary)" }} />
+              <span className="text-xs" style={{ color: "var(--muted-foreground)" }}>Score</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full" style={{ background: "var(--accent)" }} />
+              <span className="text-xs" style={{ color: "var(--muted-foreground)" }}>Valeur (EUR)</span>
+            </div>
           </div>
         </div>
         <div className="relative h-[200px] mt-8">
