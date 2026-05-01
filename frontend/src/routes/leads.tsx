@@ -92,6 +92,7 @@ function LeadsPage() {
 
   useEffect(() => {
     let active = true;
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
 
     async function loadLeads() {
       setLoadingFlag("leads", true);
@@ -114,6 +115,11 @@ function LeadsPage() {
 
       if (result.error) {
         setErrorFlag("leads", `Erreur API: ${result.error}`);
+        retryTimer = setTimeout(() => {
+          if (active) {
+            loadLeads();
+          }
+        }, 5000);
       }
       setLoadingFlag("leads", false);
       updateUrlFromState("/leads");
@@ -123,6 +129,9 @@ function LeadsPage() {
 
     return () => {
       active = false;
+      if (retryTimer) {
+        clearTimeout(retryTimer);
+      }
     };
   }, [queryPayload]);
 
@@ -411,8 +420,15 @@ function LeadsPage() {
 
         {!!error && (
           <div className="mb-4 px-4 py-3 rounded-xl flex items-center justify-between" style={{ background: "color-mix(in oklab, var(--error) 10%, transparent)", color: "var(--error)" }}>
-            <span className="text-sm">{error}</span>
-            <button className="text-sm font-semibold" onClick={() => setAppState((prev) => ({ ...prev }))}>Retry</button>
+            <div className="text-sm">
+              <div>{error}</div>
+              {error?.toLowerCase().includes("etimedout") && (
+                <div className="text-xs mt-1" style={{ opacity: 0.85 }}>
+                  Backend unreachable — start the API (example: <span style={{ fontFamily: 'monospace' }}>uvicorn backend.app.main:app --reload --port 8000</span>)
+                </div>
+              )}
+            </div>
+            <button className="text-sm font-semibold" onClick={() => window.location.reload()}>Retry</button>
           </div>
         )}
 
@@ -423,6 +439,9 @@ function LeadsPage() {
                 <th className="text-left px-4 py-3 font-medium">#</th>
                 <th className="text-left px-4 py-3 font-medium">CANDIDATE / ID</th>
                 <th className="text-left px-4 py-3 font-medium">ACADEMIC LEVEL</th>
+                <th className="text-left px-4 py-3 font-medium">INTENT</th>
+                <th className="text-left px-4 py-3 font-medium">ENGAGEMENT</th>
+                <th className="text-left px-4 py-3 font-medium">MONETABILITY</th>
                 <th className="text-left px-4 py-3 font-medium">SCORE</th>
                 <th className="text-left px-4 py-3 font-medium">TIER</th>
                 <th className="text-left px-4 py-3 font-medium">FACTOR</th>
@@ -435,7 +454,7 @@ function LeadsPage() {
               {loading &&
                 Array.from({ length: 8 }).map((_, i) => (
                   <tr key={`skeleton-${i}`} style={{ borderBottom: "1px solid var(--surface-container)" }}>
-                    <td className="px-4 py-3" colSpan={9}>
+                    <td className="px-4 py-3" colSpan={12}>
                       <div className="h-5 w-full rounded animate-pulse" style={{ background: "var(--surface-container)" }} />
                     </td>
                   </tr>
@@ -443,7 +462,7 @@ function LeadsPage() {
 
               {!loading && rows.length === 0 && (
                 <tr>
-                  <td colSpan={9} className="px-4 py-10 text-center text-sm" style={{ color: "var(--muted-foreground)" }}>
+                  <td colSpan={12} className="px-4 py-10 text-center text-sm" style={{ color: "var(--muted-foreground)" }}>
                     Aucune donnée
                   </td>
                 </tr>
@@ -476,6 +495,9 @@ function LeadsPage() {
                           {lead.grade || "Unknown"}
                         </span>
                       </td>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--foreground)" }}>{scoreFmt.format(lead.intent_score)}</td>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--foreground)" }}>{scoreFmt.format(lead.engagement_score)}</td>
+                      <td className="px-4 py-3 font-medium" style={{ color: "var(--foreground)" }}>{scoreFmt.format(lead.monetisability_score)}</td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-2">
                           <span className="font-medium" style={{ color: "var(--foreground)" }}>{scoreFmt.format(lead.total_score)}</span>

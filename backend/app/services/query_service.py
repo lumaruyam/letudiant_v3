@@ -381,6 +381,20 @@ def get_kpis_fair(fair_id: int) -> Dict[str, Any]:
             (fair_id,),
         )
 
+        score_row = _safe_one(
+            conn,
+            """
+            SELECT
+              AVG(COALESCE(intent_score, 0)) AS avg_intent_score,
+              AVG(COALESCE(engagement_score, 0)) AS avg_engagement_score,
+              AVG(COALESCE(monetisability_score, 0)) AS avg_monetisability_score,
+              AVG(COALESCE(total_score, 0)) AS avg_total_score
+            FROM lead_scores
+            WHERE fair_id = ?
+            """,
+            (fair_id,),
+        )
+
         tier_rows = _safe_all(
             conn,
             """
@@ -404,6 +418,10 @@ def get_kpis_fair(fair_id: int) -> Dict[str, Any]:
             "total_leads": total_leads,
             "optin_partner_pct": round(float(opt_row.get("partner_rate") or 0) * 100, 2),
             "optin_call_pct": round(float(opt_row.get("call_rate") or 0) * 100, 2),
+            "avg_intent_score": round(float(score_row.get("avg_intent_score") or 0), 2),
+            "avg_engagement_score": round(float(score_row.get("avg_engagement_score") or 0), 2),
+            "avg_monetisability_score": round(float(score_row.get("avg_monetisability_score") or 0), 2),
+            "avg_total_score": round(float(score_row.get("avg_total_score") or 0), 2),
             "tier_distribution": [
                 {
                     "tier_eur": float(row.get("tier_eur") or 0),
@@ -537,6 +555,10 @@ def _empty_fair_kpis(fair_id: int) -> Dict[str, Any]:
         "total_leads": 0,
         "optin_partner_pct": 0.0,
         "optin_call_pct": 0.0,
+        "avg_intent_score": 0.0,
+        "avg_engagement_score": 0.0,
+        "avg_monetisability_score": 0.0,
+        "avg_total_score": 0.0,
         "tier_distribution": [],
         "total_monetisable_value_eur": 0.0,
     }

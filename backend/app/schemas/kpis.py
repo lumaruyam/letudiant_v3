@@ -14,6 +14,10 @@ class FairKpisResponse(BaseModel):
     total_leads: int = 0
     optin_partner_pct: float = 0.0
     optin_call_pct: float = 0.0
+    avg_intent_score: float = 0.0
+    avg_engagement_score: float = 0.0
+    avg_monetisability_score: float = 0.0
+    avg_total_score: float = 0.0
     tier_distribution: List[TierDistributionItem] = Field(default_factory=list)
     total_monetisable_value_eur: float = 0.0
 

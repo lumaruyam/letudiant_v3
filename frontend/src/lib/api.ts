@@ -45,6 +45,10 @@ export type FairKpisResponse = {
   total_leads: number;
   optin_partner_pct: number;
   optin_call_pct: number;
+  avg_intent_score: number;
+  avg_engagement_score: number;
+  avg_monetisability_score: number;
+  avg_total_score: number;
   tier_distribution: Array<{
     tier_eur: number;
     leads_count: number;
@@ -135,6 +139,10 @@ const fallbackFairKpis: FairKpisResponse = {
   total_leads: 0,
   optin_partner_pct: 0,
   optin_call_pct: 0,
+  avg_intent_score: 0,
+  avg_engagement_score: 0,
+  avg_monetisability_score: 0,
+  avg_total_score: 0,
   tier_distribution: [],
   total_monetisable_value_eur: 0,
 };
@@ -271,6 +279,10 @@ export async function getKpis(fairId: number): Promise<FairKpisResponse> {
       total_leads: toNumber(data.total_leads),
       optin_partner_pct: toNumber(data.optin_partner_pct),
       optin_call_pct: toNumber(data.optin_call_pct),
+      avg_intent_score: toNumber(data.avg_intent_score),
+      avg_engagement_score: toNumber(data.avg_engagement_score),
+      avg_monetisability_score: toNumber(data.avg_monetisability_score),
+      avg_total_score: toNumber(data.avg_total_score),
       tier_distribution: distribution.map((item) => {
         const row = (item ?? {}) as Record<string, unknown>;
         return {

@@ -13,6 +13,7 @@ frontend/.vite/
 frontend/.turbo/
 
 .DS_Store
+.vscode
 
 .venv/
 __pycache__/

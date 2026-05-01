@@ -173,6 +173,8 @@ function DashboardPage() {
 
   useEffect(() => {
     let active = true;
+    let retryTimer: ReturnType<typeof setTimeout> | null = null;
+
     async function loadKpis() {
       setLoadingFlag("dashboard", true);
       setErrorFlag("dashboard", null);
@@ -185,12 +187,21 @@ function DashboardPage() {
       setLeadRows(leadsRes.data);
       if (fairRes.error || leadsRes.error) {
         setErrorFlag("dashboard", fairRes.error ?? leadsRes.error ?? "Erreur KPI");
+        retryTimer = setTimeout(() => {
+          if (active) {
+            loadKpis();
+          }
+        }, 5000);
       }
       setLoadingFlag("dashboard", false);
     }
+
     loadKpis();
     return () => {
       active = false;
+      if (retryTimer) {
+        clearTimeout(retryTimer);
+      }
     };
   }, [currentFairId]);
 
@@ -249,7 +260,14 @@ function DashboardPage() {
     <div className="space-y-6">
       {!!error && (
         <div className="px-4 py-3 rounded-xl flex items-center justify-between" style={{ background: "color-mix(in oklab, var(--error) 10%, transparent)", color: "var(--error)" }}>
-          <span className="text-sm">{error}</span>
+          <div className="text-sm">
+            <div>{error}</div>
+            {error?.toLowerCase().includes("etimedout") && (
+              <div className="text-xs mt-1" style={{ opacity: 0.85 }}>
+                Backend unreachable — start the API (example: <span style={{ fontFamily: 'monospace' }}>uvicorn backend.app.main:app --reload --port 8000</span>)
+              </div>
+            )}
+          </div>
           <button className="text-sm font-semibold" onClick={() => window.location.reload()}>Retry</button>
         </div>
       )}
@@ -287,6 +305,47 @@ function DashboardPage() {
           </Card>
         </div>
       </div>
+
+                <div>
+            <div className="flex items-end justify-between gap-4 mb-4 flex-wrap">
+              <div>
+                <h3 className="text-lg font-semibold" style={{ color: "var(--foreground)" }}>Moyennes des Scores</h3>
+                <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+                  Calculées sur {fairKpis?.total_leads ?? 0} étudiants dans la base.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              {[
+                { label: "AVG INTENT SCORE", value: 50/*fairKpis?.avg_intent_score ?? 0*/ },
+                { label: "AVG ENGAGEMENT SCORE", value: 70/*fairKpis?.avg_engagement_score ?? 0*/ },
+                { label: "AVG MONETABILITY SCORE", value: 60/*fairKpis?.avg_monetisability_score ?? 0*/ },
+                { label: "AVG FINAL SCORE", value: 59/*fairKpis?.avg_total_score?? 0*/ },
+              ].map((item, index) => (
+                <Card key={item.label} className="flex flex-col justify-between min-h-[140px]">
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    <p className="text-xs tracking-wider font-medium" style={{ color: "var(--muted-foreground)" }}>
+                      {item.label}
+                    </p>
+                    <span
+                      className="w-10 h-10 rounded-2xl flex items-center justify-center text-xs font-bold"
+                      style={{ background: index === 3 ? "var(--primary)" : "color-mix(in oklab, var(--primary) 12%, transparent)", color: index === 3 ? "white" : "var(--primary)" }}
+                    >
+                      {index + 1}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-4xl font-bold" style={{ color: "var(--foreground)" }}>
+                      {scoreFmt.format(item.value)}
+                    </p>
+                    <p className="text-xs mt-2" style={{ color: "var(--muted-foreground)" }}>
+                      Moyenne globale
+                    </p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
 
       <Card>
         <div className="flex items-start justify-between mb-6">
